@@ -1,0 +1,77 @@
+/**********************
+Breakpoints 
+***********************/
+
+$bp-xl: 1824px;
+$bp-large: 1300px;
+$bp-desktop: 1150px;
+$bp-laptop: 1070px;
+$bp-tablet: 900px;
+$bp-mobile: 650px;
+$bp-small: 550px;
+$bp-xs: 320px;
+
+
+/**********************
+Colors
+***********************/
+
+$black: black;
+$blue: #42526f;
+$light-blue: #b0b9be;
+$dark-blue: #2e3239;
+$gold: #c3a767;
+$light-gold: #e1d8c5;
+$dark-gold: #a88a45;
+$bright-gold: #fcd478;
+$red: #93102a;
+$dark-red: #620518;
+$bright-red: #d2062e;
+
+/**********************
+Color Usage
+***********************/
+
+$color-primary: $blue;
+$color-primary-light: $light-blue;
+$color-primary-dark: $dark-blue;
+$color-secondary: $gold;
+$color-secondary-light: $light-gold;
+$color-secondary-dark: $dark-gold;
+$color-accent: $red;
+$color-accent-light: $bright-red;
+$color-accent-dark: $dark-red;
+
+/**********************
+Font Family
+***********************/
+
+$font-family: 'Montserrat', sans-serif;
+$font-title-black: 'FalcoBlack', sans-serif;
+$font-title-inline: 'FalcoBlackInline', sans-serif;
+
+/**********************
+Font Weights
+***********************/
+
+$font-regular: 400;
+$font-bold: 700;
+
+/**********************
+Font Size
+***********************/
+
+$font-size-micro: 12px;
+$font-size-small: 14px;
+$font-size-base: em(16);
+$font-size-medium: em(24);
+$font-size-regular: em(30);
+$font-size-large: em(55);
+$font-size-xl: em(65);
+
+/**********************
+Letter Spacing
+***********************/
+
+$letter-spacing-wide: em(.75);
+$letter-spacing-x-wide: em(1.5);

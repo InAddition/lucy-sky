@@ -1,0 +1,130 @@
+.hero {
+	width: 100%;
+	display: flex;
+	height: 500px;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	flex-direction: column;
+	font-size: 90%;
+	overflow: hidden;
+	@media (max-width: $bp-laptop) {
+		font-size: 80%;
+		height: 350px;
+	}
+	@media (max-width: $bp-mobile) {
+		font-size: 65%;
+		height: 300px;
+	}
+}
+.hero-slide {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url(../images/temp/temp-hero.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	&:before {
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		position: absolute;
+		background: rgba(0,0,0,0.8);
+		content: '';
+		opacity: 0.5;
+	}
+	@media (max-width: $bp-laptop) {
+		height: 350px;
+	}
+	@media (max-width: $bp-mobile) {
+		height: 300px;
+	}
+}
+.hero-video-container {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: black;
+    @media (max-width: $bp-tablet) {
+        display: none;
+    }
+}
+.hero-video {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    bottom: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background: black;
+    opacity: 0.3;
+    transform: translateX(-50%) translateY(-50%);
+}
+.hero-brand h1 {
+	text-align: center;
+	font-size: 125%;
+	position: relative;
+	z-index: 3;
+	span {
+		&.hero-expanded {
+			font-size: em(16);
+			letter-spacing: 1em;
+			text-transform: uppercase;
+			color: white;
+			display: block;
+			font-weight: $font-regular;
+			margin-right: -1em;
+			margin-bottom: 20px;
+		}
+		&.hero-xl {
+			font-size: em(80);
+			letter-spacing: -0.05em;
+			text-transform: uppercase;
+			color: white;
+			font-family: $font-title-inline;
+			display: block;
+			margin-bottom: 0;
+			line-height: 1;
+		}
+		&.hero-large {
+			font-size: em(48);
+			letter-spacing: -0.05em;
+			text-transform: uppercase;
+			color: white;
+			font-family: $font-title-inline;
+			display: block;
+			margin-bottom: 0;
+			line-height: 1;
+		}
+		&.hero-small {
+			font-size: $font-size-medium;
+			text-transform: uppercase;
+			color: white;
+			display: block;
+			margin-bottom: 30px;
+			font-weight: $font-regular;
+		}
+	}
+}
+.hero-brand {
+	z-index: 3;
+	position: relative;
+	text-align: center;
+	padding: 0 30px;
+	a {
+		margin: 0 auto;
+	}
+}
