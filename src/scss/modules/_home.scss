@@ -116,3 +116,106 @@
 	font-style: normal;
 	transition: color .3s;
 }
+
+
+/************************************
+Home CTAS
+************************************/
+
+.home-ctas {
+	@extend .home-locations;
+	@media (max-width: $bp-mobile) {
+		padding: 40px 0;
+	}
+}
+.home-cta {
+	width: 33.33%;
+	text-align: center;
+	padding: 0 10px;
+	text-decoration: none;
+	h2 {
+		color: white;
+		text-transform: uppercase;
+		font-size: $font-size-regular;
+		text-align: center;
+		margin-bottom: 0px;
+		transition: color .3s;
+		text-decoration: none;
+	}
+	p {
+		color: white;
+		font-size: em(14);
+		text-align: center;
+		margin-bottom: 20px;
+		text-decoration: none;
+	}
+	.btn-small {
+		margin: 0 auto;
+	}
+	&:hover {
+		h2 {
+			color: $color-secondary;
+		}
+		.home-cta-icon:after {
+			opacity: 1;
+		}
+		.btn-small {
+			background-color: $color-primary-light;
+			span {
+				color: white;
+			}
+		}
+	}
+	@media (max-width: $bp-laptop) {
+		font-size: 80%;
+	}
+	@media (max-width: $bp-mobile) {
+		width: 100%;
+		font-size: 100%;
+		margin-bottom: 30px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+.home-cta-icon {
+	width: em(239);
+	height: em(125);
+	margin: 0 auto;
+	background-repeat: no-repeat;
+	position: relative;
+	background-position: top;
+	background-size: cover;
+	margin-bottom: 20px;
+	&:after {
+		position: absolute;
+		display: block;
+		content: '';
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: bottom;
+		background-size: cover;
+		z-index: 2;
+		opacity: 0;
+		transition: opacity .2s;
+	}
+}
+.home-cta-lucy {
+	background-image: url(../images/home-cta-icon-lucy-cares.png);
+	&:after {
+		background-image: url(../images/home-cta-icon-lucy-cares.png);
+	}
+}
+.home-cta-products {
+	background-image: url(../images/home-cta-icon-products.png);
+	&:after {
+		background-image: url(../images/home-cta-icon-products.png);
+	}
+}
+.home-cta-vip {
+	background-image: url(../images/home-cta-icon-vip.png);
+	&:after {
+		background-image: url(../images/home-cta-icon-vip.png);
+	}
+}

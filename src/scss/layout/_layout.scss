@@ -17,9 +17,11 @@
 	}
 	@media (max-width: $bp-tablet) {
 		padding: em(40);
+		padding-bottom: em(60);
 	}
 	@media (max-width: $bp-mobile) {
 		padding: em(20);
+		padding-bottom: em(60);
 	}
 }
 .wood-wrapper {
