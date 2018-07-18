@@ -1,4 +1,4 @@
-<?php /* Template Name: Home Template */ ?>
+<?php /* Template Name: Full Width Template */ ?>
 <?php get_header(); ?>
 <div class="wrapper">
 	<!-- Hero -->
@@ -123,85 +123,77 @@
 			</div>
 		</div>
 	</div>
-	<!-- CTA Icons -->
-		<div class="page-wrapper wood-wrapper">
-			<div class="container">
-				<div class="home-ctas">
-					<a href="#" class="home-cta">
-						<div class="home-cta-icon home-cta-lucy"></div>
-						<h2>Lucy Cares</h2>
-						<p>Honored to lend a hand<br/>to the people of our community.</p>
-						<div class="btn-small">
-							<span>Learn More</span>
-						</div>
-					</a>
-					<a href="#" class="home-cta">
-						<div class="home-cta-icon home-cta-products"></div>
-						<h2>Products</h2>
-						<p>From flower to edibles to concentrates<br/>to pipes and everything between.</p>
-						<div class="btn-small">
-							<span>View Products</span>
-						</div>
-					</a>
-					<a href="#" class="home-cta">
-						<div class="home-cta-icon home-cta-vip"></div>
-						<h2>VIP Club</h2>
-						<p>Enroll in our VIP Club<br/>for exclusive percs!</p>
-						<div class="btn-small">
-							<span>Join Now</span>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	<!-- CTA Rows -->
-	<div class="page-wrapper">
-		<div class="container">
-			<div class="cta-row">
-				<div class="cta-row-container">
-					<a href="#"></a>
-					<div class="cta-row-content">
-						<h2>Learn About Cannabis</h2>
-						<div class="btn-double-border">
-							<span>Cannabis 101</span>
+	<!-- Carousel -->
+		<div class="carousel-container">
+			<h1>Section Title</h1>
+			<div class="carousel js-slider-2">
+				<div class="carousel-cell cta-block">
+					<div class="cta-row-container">
+						<a href="#"></a>
+						<div class="cta-row-content">
+							<h2>Learn About Cannabis</h2>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="cta-row">
-				<div class="cta-row-container">
-					<a href="#"></a>
-					<div class="cta-row-content">
-						<h2>Learn About Cannabis</h2>
-						<div class="btn-double-border">
-							<span>Cannabis 101</span>
+				<div class="carousel-cell cta-block">
+					<div class="cta-row-container">
+						<a href="#"></a>
+						<div class="cta-row-content">
+							<h2>Learn About Cannabis</h2>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="cta-row">
-				<div class="cta-row-container">
-					<a href="#"></a>
-					<div class="cta-row-content">
-						<h2>Learn About Cannabis</h2>
-						<div class="btn-double-border">
-							<span>Cannabis 101</span>
+				<div class="carousel-cell cta-block">
+					<div class="cta-row-container">
+						<a href="#"></a>
+						<div class="cta-row-content">
+							<h2>Learn About Cannabis</h2>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="cta-row">
-				<div class="cta-row-container">
-					<a href="#"></a>
-					<div class="cta-row-content">
-						<h2>Learn About Cannabis</h2>
-						<div class="btn-double-border">
-							<span>Cannabis 101</span>
+				<div class="carousel-cell cta-block">
+					<div class="cta-row-container">
+						<a href="#"></a>
+						<div class="cta-row-content">
+							<h2>Learn About Cannabis</h2>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-cell cta-block">
+					<div class="cta-row-container">
+						<a href="#"></a>
+						<div class="cta-row-content">
+							<h2>Learn About Cannabis</h2>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-cell cta-block">
+					<div class="cta-row-container">
+						<a href="#"></a>
+						<div class="cta-row-content">
+							<h2>Learn About Cannabis</h2>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-cell cta-block">
+					<div class="cta-row-container">
+						<a href="#"></a>
+						<div class="cta-row-content">
+							<h2>Learn About Cannabis</h2>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-cell cta-block">
+					<div class="cta-row-container">
+						<a href="#"></a>
+						<div class="cta-row-content">
+							<h2>Learn About Cannabis</h2>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	<!-- Carousel -->
+	
 </div>
 <?php get_footer(); ?>

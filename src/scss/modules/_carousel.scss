@@ -1,0 +1,25 @@
+.carousel-container {
+	@extend .wood-wrapper;
+	text-align: center;
+	padding: em(40) 0;
+	h1 {
+		color: $color-secondary;
+		font-size: $font-size-base;
+		letter-spacing: 0.5em;
+		text-transform: uppercase;
+		padding-bottom: em(40);
+		text-align: center;
+		margin: 0 auto;
+	}
+}
+.carousel {
+	width: 100%;
+}
+.js-slider-2 .flickity-slider a {
+	position: absolute !important;
+}
+.carousel-cell {
+	width: em(400);
+	height: em(270);
+	margin: 0 em(8);
+}

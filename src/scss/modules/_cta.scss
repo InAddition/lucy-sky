@@ -1,0 +1,153 @@
+%cta-master {
+	
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	display: flex;
+	&:before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.5);
+		transition: all .3s;
+	}
+	a {
+		position: absolute !important;
+		z-index: 4;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	&:hover {
+		&:before {
+			background-color: rgba(0,0,0,0.8);
+		}
+		.cta-row-container:before {
+			top: 12px;
+			left: 12px;
+			right: 12px;
+			bottom: 12px;
+			border: solid 1px $color-secondary;
+		}
+		.cta-row-content  {
+			h2 {
+				color: $color-secondary;
+			}
+			div {
+				background-color: $color-secondary;
+				&:after {
+					border-color: white;
+				}
+			}
+		}
+	}
+	@media (max-width: $bp-laptop) {
+		font-size: 90%;
+	}
+	@media (max-width: $bp-tablet) {
+		font-size: 80%;
+	}
+	@media (max-width: $bp-mobile) {
+		font-size: 70%;
+	}
+}
+
+/************************************************
+CTA Row
+************************************************/
+
+.cta-row {
+	@extend %cta-master;
+	width: 100%;
+	min-height: 350px;
+	margin-bottom: em(80);
+	background-image: url(../images/temp/temp-hero.jpg);
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 3;
+		width: em(70);
+		height: em(70);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url(../images/icon-logo-full-color.png);
+		left: 0;
+		right: 0;
+		margin: auto;
+		bottom: em(-27);
+	}
+	.cta-row-content h2 {
+		font-family: $font-title-inline;
+		font-size: em(48);
+		margin-bottom: 15px;
+	}
+	@media (max-width: $bp-tablet) {
+		min-height: 300px;
+	}
+	@media (max-width: $bp-mobile) {
+		min-height: 250px;
+	}
+}
+.cta-row-container {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	padding: em(50);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&:before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 8px;
+		left: 8px;
+		right: 8px;
+		bottom: 8px;
+		border: solid 1px white;
+		transition: all .3s;
+		z-index: 1;
+	}
+}
+.cta-row-content {
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	z-index: 2;
+	h2 {
+		text-transform: uppercase;
+		color: white;
+		display: block;
+		line-height: 1;
+		transition: all .3s;
+	}
+	div {
+		margin: 0 auto;
+	}
+}
+
+/**************************************
+CTA Block
+**************************************/
+
+.cta-block {
+	@extend %cta-master;
+	background-image: url(../images/temp/temp-hero.jpg);
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	.cta-row-content h2 {
+		font-family: $font-title-black;
+		font-size: $font-size-regular;
+	}
+	@media (max-width: $bp-mobile) {
+		min-height: 250px;
+
+	}
+}

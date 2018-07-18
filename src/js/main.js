@@ -51,6 +51,26 @@ win.on( 'resize', function() {
 	}
 });
 
+var flickityGallery2 = $( '.js-slider-2' );
+
+flickityGallery2.flickity({
+	cellAlign: 'center',
+	contain: true,
+	autoPlay: 4500,
+	wrapAround: true,
+	pageDots: false,
+	prevNextButtons: true,
+	percentPosition: false,
+	imagesLoaded: true
+});
+
+var flickityGalleryData2 = flickityGallery2.data( 'flickity' );
+
+win.on( 'resize', function() {
+	if( flickityGalleryData2 ) {
+		flickityGalleryData2.resize();
+	}
+});
 //////// Venobox
 
 // $('.venobox').venobox(); 

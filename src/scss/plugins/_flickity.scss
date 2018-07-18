@@ -110,6 +110,12 @@ Custom Prev and Next Buttons
 		height: em(30);
 	}
 }
+.js-slider-2 {
+	.flickity-prev-next-button {
+		position: absolute;
+		top: -370px;
+	}
+}
 .related-content .flickity-prev-next-button,
 .product-slider .flickity-prev-next-button {
 	background: url(../images/icon-slider-arrow.svg);
