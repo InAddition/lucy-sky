@@ -9,7 +9,6 @@
 
 @import
   'base/reset',
-  'base/typography',
   'base/shame';
 
 @import
@@ -28,7 +27,11 @@
   'modules/home',
   'modules/locations',
   'modules/carousel',
+  'modules/page-copy',
+  'modules/media',
+  'modules/gallery',
   'modules/cta',
+  'modules/article',
   'modules/section-title',
   'modules/post',
   'modules/footer';

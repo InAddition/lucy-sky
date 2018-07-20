@@ -1,11 +1,8 @@
 .btn-double-border {
 	position: relative;
-	padding: em(15) em(65);
-	border: solid 1px $color-secondary;
 	display: inline-block;
 	text-align: center;
 	text-decoration: none;
-	transition: all .2s;
 	span {
 		color: white;
 		font-size: $font-size-base;
@@ -13,25 +10,36 @@
 		text-align: center;
 		text-decoration: none;
 		transition: all .2s;
+		padding: em(15) em(65);
+		border: solid 1px $color-secondary;
+		display: block;
+		transition: all .2s;
+		position: relative;
+		z-index: 2;
 	}
 	&:after {
 		content: '';
 		display: block;
-		width: 100%;
-		height: 100%;
-		top: 3px;
-		left: -5px;
+		top: 4px;
+	    left: -4px;
+	    bottom: -4px;
+	    right: 4px;
+	    margin: auto;
 		position: absolute;
 		border: solid 1px $color-secondary;
 		transition: all .2s;
-		z-index: -1;
 	}
 	&:hover {
-		background-color: $color-secondary;
-		&:after {
+		span {
+			background-color: $color-secondary;
+		}
+		&:before {
 			border-color: white;
 		}
 	}
+}
+.btn-margin-auto {
+	margin: 0 auto;
 }
 .btn-small {
 	position: relative;
@@ -47,11 +55,83 @@
 		text-transform: uppercase;
 		text-align: center;
 		text-decoration: none;
+		transition: all .2s;
 	}
 	&:hover {
 		background-color: $color-primary-light;
 		span {
 			color: white;
 		}
+	}
+}
+.btn-lrg {
+	width: 100%;
+	position: relative;
+	padding: em(40);
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	transition: all .2s;
+	background: linear-gradient(to right, $color-accent-dark 0%,$color-accent 50%,$color-accent-dark 100%); 
+
+	&:before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 8px;
+		left: 8px;
+		right: 8px;
+		bottom: 8px;
+		border: solid 1px white;
+		transition: all .2s;
+		z-index: 2;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		right:0;
+		bottom: 0;
+		transition: all .3s;
+		z-index: 1;
+		opacity: 0;
+		transition: all .3s;
+		background: linear-gradient(to right, #a88a45 0%,#c3a767 50%,#a88a45 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	}
+	span {
+		color: white;
+		font-size: $font-size-medium;
+		font-family: $font-title-black;
+		text-transform: uppercase;
+		text-align: center;
+		text-decoration: none;
+		transition: all .2s;
+		position: relative;
+		z-index: 3;
+	}
+	&:hover {
+		&:after {
+			opacity: 1;
+		}
+		&:before {
+			top: 12px;
+			left: 12px;
+			right: 12px;
+			bottom: 12px;
+		}
+		span {
+			color: white;
+		}
+	}
+	@media (max-width: $bp-laptop) {
+		font-size: 90%;
+	}
+	@media (max-width: $bp-tablet) {
+		font-size: 80%;
+	}
+	@media (max-width: $bp-mobile) {
+		font-size: 70%;
 	}
 }

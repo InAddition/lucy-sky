@@ -1,0 +1,415 @@
+/********************************************************
+Text Colors
+********************************************************/
+.no-background {
+	.btn-double-border {
+		span {
+			color: $color-accent;
+			border: solid 1px $color-accent;
+		}
+		&:after {
+			border: solid 1px $color-accent;
+		}
+		&:hover {
+			span {
+				background-color: $color-accent;
+				color: white;
+			}
+		}
+	}
+	.btn-small {
+		border: solid 1px $color-primary;
+		span {
+			color: $color-primary;
+		}
+		&:hover {
+			background-color: $color-primary;
+			span {
+				color: white;
+			}
+		}
+	}
+	.article-cta {
+		h2 {
+			color: $color-primary;
+		}
+		p {
+			color: black;
+		}
+		&:hover {
+			h2 {
+				color: $color-secondary;
+			}
+			.btn-small {
+				background-color: $color-primary-light;
+				span {
+					color: white;
+				}
+			}
+		}
+	}
+}
+.wood-wrapper, .blue-wrapper, .red-wrapper {
+	.wysiwyg {
+		color: white;
+		h1, h2, h3, a {
+			color: $color-secondary;
+		}
+		p, ul, li, h4, h5, h6 {
+			color: white;
+		}
+	}
+	.large-title span, 
+	.small-title span,
+	.thin-title span {
+		color: $color-secondary;
+	}
+	.article-cta {
+		h2 {
+			color: $color-secondary;
+		}
+		p {
+			color: white;
+		}
+		.btn-small {
+			border: solid 1px $color-secondary;
+			span {
+				color: white;
+			}
+		}
+		&:hover {
+			h2 {
+				color: white;
+			}
+			.btn-small {
+				background-color: $color-secondary;
+				span {
+					color: white;
+				}
+			}
+		}
+	}
+}
+.blue-wrapper {
+	.btn-small {
+		border: solid 1px $color-secondary;
+		span {
+			color: white;
+		}
+		&:hover {
+			background-color: $color-secondary;
+			span {
+				color: white;
+			}
+		}
+	}
+
+}
+.red-wrapper {
+	.btn-small {
+		border: solid 1px $color-secondary;
+		span {
+			color: white;
+		}
+		&:hover {
+			background-color: $color-secondary;
+			span {
+				color: white;
+			}
+		}
+	}
+	.btn-lrg {
+		background: linear-gradient(to right, #a88a45 0%,#c3a767 50%,#a88a45 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		&:after {
+		background: linear-gradient(to right, #42526f 0%,#586a93 50%,#42526f 100%);
+		}
+	}
+}
+.gold-wrapper {
+	.wysiwyg {
+		color: white;
+		h1, h2, h3, a {
+			color: $color-accent;
+		}
+		p, ul, li, h4, h5, h6 {
+			color: white;
+		}
+	}
+	.large-title span, 
+	.small-title span,
+	.thin-title span {
+		color: $color-accent;
+	}
+	.btn-double-border {
+		span {
+			color: white;
+			border: solid 1px $color-accent;
+		}
+		&:after {
+			border: solid 1px $color-accent;
+		}
+		&:hover {
+			span {
+				background-color: $color-accent;
+				color: white;
+			}
+		}
+	}
+	.btn-small {
+		border: solid 1px $color-accent;
+		span {
+			color: white;
+		}
+		&:hover {
+			background-color: $color-accent;
+			span {
+				color: white;
+			}
+		}
+	}
+	.btn-lrg {
+		&:after {
+		background: linear-gradient(to right, #42526f 0%,#586a93 50%,#42526f 100%);
+		}
+	}
+
+	.article-cta {
+		h2 {
+			color: $color-accent;
+		}
+		p {
+			color: white;
+		}
+		.btn-small {
+			border: solid 1px $color-accent;
+			span {
+				color: white;
+			}
+		}
+		&:hover {
+			h2 {
+				color: white;
+			}
+			.btn-small {
+				background-color: $color-accent;
+				span {
+					color: white;
+				}
+			}
+		}
+	}
+
+}
+.hero, .cta-row-container {
+	.btn-double-border {
+		span {
+			color: white;
+			border: solid 1px $color-secondary;
+		}
+		&:after {
+			border: solid 1px $color-secondary;
+		}
+		&:hover {
+			span {
+				background-color: $color-secondary;
+				color: white;
+			}
+		}
+	}
+}
+.centered {
+	text-align: center;
+}
+
+
+/********************************************************
+Page Titles
+********************************************************/
+.centered-title {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.large-title {
+	margin: 0;
+	padding: 0;
+	font-size: em(34);
+	span {
+		line-height: 1;
+		font-family: $font-title-inline;
+		font-size: $font-size-large-title;
+		text-transform: uppercase;
+		color: $color-primary;
+		display: inline block;
+	}
+	&.with-icon {
+		span {
+			background-image: url(../images/icon-logo-full-color.png);
+			background-position: top left;
+			background-size: em(14);
+			background-repeat: no-repeat;
+			padding-left: em(20);
+		}
+	}
+	@media (max-width: $bp-laptop) {
+		font-size: em(26);
+	}
+	@media (max-width: $bp-tablet) {
+		font-size: em(20);
+		font-family: $font-title-black;
+	}
+	section & {
+		font-size: em(28);
+		@media (max-width: $bp-tablet) {
+			font-size: em(20);
+			font-family: $font-title-black;
+		}
+	}
+}
+.small-title {
+	margin: 0;
+	padding: 0;
+	font-size: $font-size-regular;
+	span {
+		line-height: 1;
+		font-family: $font-title-black;
+		font-size: $font-size-regular;
+		text-transform: uppercase;
+		color: $color-primary;
+		display: inline block;
+	}
+	&.with-icon {
+		span {
+			background-image: url(../images/icon-logo-full-color.png);
+			background-position: top left;
+			background-size: em(14);
+			background-repeat: no-repeat;
+			padding-left: em(20);
+		}
+	}
+	@media (max-width: $bp-laptop) {
+		font-size: em(24);
+	}
+	@media (max-width: $bp-tablet) {
+		font-size: em(18);
+		font-family: $font-title-black;
+	}
+}
+.thin-title {
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0.4em;
+	margin-right: -0.4em;
+	text-transform: uppercase;
+	color: $color-primary;
+	span {
+		line-height: 1;
+		font-family: 14px;
+		font-size: $font-size-micro;
+		text-transform: uppercase;
+		color: $color-primary;
+		display: inline block;
+	}
+	&.with-icon {
+		span {
+			background-image: url(../images/icon-logo-full-color.png);
+			background-position: top left;
+			background-size: 14px;
+			background-repeat: no-repeat;
+			padding-left: 25px;
+		}
+	}
+}
+
+/********************************************************
+Page Copy
+********************************************************/
+
+.wysiwyg {
+		margin: 0 auto;
+		font-size: em(18);
+		letter-spacing: -0.025em;
+		h1, h2, h3, h4, h5, h6 {
+			margin-top: 0;
+			line-height: 1;
+		}
+		h1 {
+			font-size: $font-size-large;
+			color: $color-primary;
+		}
+		h2 {
+			font-size: $font-size-large-title;
+			color: $color-primary;
+			margin-bottom: .67em;
+		}
+		h3 {
+			font-size: $font-size-regular;
+			color: $color-primary;
+			margin-bottom: .67em;
+			line-height: 1.2;
+		}
+		h4, h5, h6 {
+			font-size: $font-size-medium;
+			font-weight: $font-regular;
+			color: $black;
+			margin-bottom: .67em;
+			line-height: 1.2;
+		}
+		a {
+			color: $color-accent;
+			transition: color .3s;
+			&:hover {
+				color: $color-accent-light;
+			}
+		}
+		p, ul {
+			font-size: em(18);
+			margin-bottom: em(25);
+			letter-spacing: 0.025em;
+			font-weight: $font-regular;
+			color: $black;
+		}
+		strong, b {
+			font-weight: $font-bold;
+		}
+		img {
+			width: 100%;
+			display: block;
+			height: auto;
+			margin-bottom: em(40);
+		}
+		:last-child {
+			margin-bottom: 0;
+		}
+	@media (max-width: $bp-laptop) {
+		font-size: 90%;
+	}
+	@media (max-width: $bp-tablet) {
+		font-size: 70%;
+		h3 {
+			font-size: 20px;
+			line-height: 1.5;
+		}
+		h4, h5, h6 {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+		p, li {
+			font-size: 14px;
+		}
+	}
+}
+.small-copy {
+	margin: 0 auto;
+	font-weight: $font-regular;
+	color: $black;
+	p, ul {
+		font-size: $font-size-small;
+		margin-bottom: em(25);
+		font-weight: $font-regular;
+		color: $black;
+	}
+	:last-child {
+		margin-bottom: 0;
+	}
+}

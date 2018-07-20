@@ -1,5 +1,4 @@
 %cta-master {
-	
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -89,10 +88,18 @@ CTA Row
 	}
 	@media (max-width: $bp-tablet) {
 		min-height: 300px;
+		.cta-row-content h2 {
+			font-family: $font-title-black;
+			font-size: em(48);
+			margin-bottom: 15px;
+		}
 	}
 	@media (max-width: $bp-mobile) {
 		min-height: 250px;
 	}
+}
+section .cta-row:after {
+	display: none;
 }
 .cta-row-container {
 	position: relative;
@@ -149,5 +156,42 @@ CTA Block
 	@media (max-width: $bp-mobile) {
 		min-height: 250px;
 
+	}
+}
+
+
+/**************************************
+CTA grid
+**************************************/
+
+.cta-grid {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 0 -0.5%;
+	flex-direction: row;
+}
+
+.cta-grid-item {
+	@extend %cta-master;
+	background-image: url(../images/temp/temp-hero.jpg);
+	width: 32.33%;
+	margin: 0.5%;
+	min-height: em(220);
+	.cta-row-content h2 {
+		font-family: $font-title-black;
+		font-size: $font-size-regular;
+	}
+	@media (max-width: $bp-tablet) {
+		width: 49%;
+	}
+	@media (max-width: $bp-mobile) {
+		min-height: 250px;
+		width: 100%;
+	}
+	.wrapper-two-column & {
+		width: 100%;
+		margin: 0.5% 0;
 	}
 }

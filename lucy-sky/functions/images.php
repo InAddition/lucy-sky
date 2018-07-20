@@ -15,7 +15,8 @@ if(function_exists('add_theme_support')){
 if(function_exists('add_image_size')){
 	add_image_size('thumb', 600, 412, true);
 	add_image_size('square', 600, 600, true);
-	add_image_size( 'feature', 1500, 555, true );
+	add_image_size( 'sml_feature', 1040, 500, true );
+	add_image_size( 'feature', 1570, 500, true );
 	add_image_size('full', 2000, 2000);
 }
 

@@ -16,7 +16,7 @@ $bp-xs: 320px;
 Colors
 ***********************/
 
-$black: black;
+$black: lighten(black, 10%);
 $blue: #42526f;
 $light-blue: #b0b9be;
 $dark-blue: #2e3239;
@@ -66,6 +66,7 @@ $font-size-small: 14px;
 $font-size-base: em(16);
 $font-size-medium: em(24);
 $font-size-regular: em(30);
+$font-size-large-title: em(40);
 $font-size-large: em(55);
 $font-size-xl: em(65);
 

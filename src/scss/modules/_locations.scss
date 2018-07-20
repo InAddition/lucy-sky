@@ -16,6 +16,11 @@ Locations
 	@media (max-width: $bp-mobile) {
 		padding: em(20);
 	}
+	.gold-thin-title {
+		margin-bottom: em(45);
+		text-align: center;
+		color: $color-secondary;
+	}
 }
 .locations {
 	width: 100%;

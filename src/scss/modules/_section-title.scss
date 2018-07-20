@@ -7,3 +7,22 @@
 	text-align: center;
 	text-transform: uppercase;
 }
+.page-title {
+	width: 100%;
+	text-align: center;
+	padding: 20px;
+	margin: 0;
+	span {
+		font-size: $font-size-micro;
+		letter-spacing: 1em;
+		margin-right: -1em;
+		display: block;
+		text-align: center;
+		text-transform: uppercase;
+		color: $color-secondary;
+
+	}
+	&.gold-wrapper span {
+		color: white;
+	}
+}

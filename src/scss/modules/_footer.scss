@@ -1,6 +1,7 @@
 footer {
 	background: linear-gradient(to right, #394760 0%,#576c92 50%,#394760 100%);
 	width: 100%;
+	border-top: solid 1px $color-primary-dark;
 }
 .footer-container {
 	width: 100%;
@@ -35,7 +36,6 @@ footer {
 		text-align: center;
 		.btn-double-border {
 			margin: 0 auto;
-			padding: em(15);
 			width: 100%;
 			margin-bottom: em(30);
 			span {
