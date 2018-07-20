@@ -73,7 +73,7 @@ win.on( 'resize', function() {
 });
 //////// Venobox
 
-// $('.venobox').venobox(); 
+$('.venobox').venobox(); 
 
 //////// Sticky Footer
 

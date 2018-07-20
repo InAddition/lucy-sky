@@ -67,29 +67,8 @@
 	}
 }
 section {
-	width: 100%;
-	.wrapper-full-width & {
-		padding: em(60);
-		@media (max-width: $bp-laptop) {
-			padding: em(60);
-		}
-		@media (max-width: $bp-tablet) {
-			padding: em(40);
-		}
-	}
-	.wrapper-two-column & {
-		margin-bottom: em(60) !important;
-		font-size: 85%;
-		&.with-background {
-			padding: em(40);
-			@media (max-width: $bp-laptop) {
-				padding: em(30);
-			}
-		}
-		&:last-of-type {
-			margin-bottom: 0 !important;
-		}
-	}
+	max-width: 1100px;
+	margin: 0 auto;
 }
 .container {
 	max-width: 1100px;
@@ -161,9 +140,51 @@ One Column and Sidebar
 .main-column {
 	flex-grow: 1;
 	padding-right: em(60);
+	.content {
+		padding: 0;
+		margin-bottom: em(40);
+	}
+	.wood-wrapper,
+	.blue-wrapper,
+	.red-wrapper,
+	.gold-wrapper,
+	.white-wrapper {
+		padding: em(30);
+	}
+	.site-module {
+		margin-bottom: em(30);
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		@media (max-width: $bp-laptop) {
+			margin-bottom: em(30);
+			:last-child {
+				margin-bottom: 0;
+			}
+		}
+		@media (max-width: $bp-tablet) {
+			margin-bottom: em(30);
+			:last-child {
+				margin-bottom: 0;
+			}
+		}
+		@media (max-width: $bp-mobile) {
+			margin-bottom: em(30);
+			:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
 	@media (max-width: $bp-tablet) {
 		padding-right: 0;
 		margin-bottom: em(40);
+		.wood-wrapper,
+		.blue-wrapper,
+		.red-wrapper,
+		.gold-wrapper,
+		.white-wrapper {
+			padding: em(20);
+		}
 	}
 }
 aside {
@@ -171,12 +192,43 @@ aside {
 	padding: em(40);
 	flex-shrink: 0;
 	background-color: rgba(255,255,255,0.5);
+	.content {
+		padding: 0;
+		margin-bottom: em(30);
+	}
+	.wood-wrapper,
+	.blue-wrapper,
+	.red-wrapper,
+	.gold-wrapper,
+	.white-wrapper {
+		padding: em(30);
+	}
+	.site-module {
+		margin-bottom: em(20);
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		@media (max-width: $bp-laptop) {
+			margin-bottom: em(30);
+			:last-child {
+				margin-bottom: 0;
+			}
+		}
+		@media (max-width: $bp-tablet) {
+			margin-bottom: em(30);
+			:last-child {
+				margin-bottom: 0;
+			}
+		}
+		@media (max-width: $bp-mobile) {
+			margin-bottom: em(30);
+			:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
 	section {
 		width: 100%;
-		margin-bottom: em(40) !important;
-		&.with-background {
-			padding: em(30);
-		}
 		&:last-of-type {
 			margin-bottom: 0 !important;
 		}
