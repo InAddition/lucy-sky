@@ -10,6 +10,8 @@ header {
 	align-items: center;
 	position: relative;
 	flex-wrap: wrap;
+	position: relative;
+	z-index: 5;
 	&:before {
 		position: absolute;
 		width: 100%;
@@ -45,10 +47,10 @@ header {
 	position: relative;
 	@media (max-width: $bp-laptop) {
 		transform: translateX(101%);
-		display: none;
 		width: 100%;
 		height: auto;
 		z-index: 2;
+		display: block;
 		transition: transform .3s, visibility 0s .3s, width 0s .3s;
 		visibility: hidden;
 		width: 0;
@@ -83,6 +85,8 @@ header {
 			height: 100%;
 			transition: all .2s;
 		}
+
+
 		  &:hover, &.js-sub-nav-open {
 			background: rgba(0,0,0,0.2);
 			.main-nav-item {
@@ -135,17 +139,6 @@ header {
 	padding: 0 em(25);
 	background: rgba(255,255,255,0);
 	transition: color .2s;
-	&:after {
-		content: '';
-		width: em(14);
-		height: 100%;
-		margin-left: em(10);
-		background: url(../images/icon-down-arrow.svg);
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: contain;
-
-	}
 	@media (max-width: $bp-laptop) {
 		padding: em(15) em(25);
 		display: block;
@@ -185,8 +178,8 @@ Site Logo
 		transition: all .2s;
 		transform: translateX(em(25));
 	}
-	svg {
-		height: 50%;
+	svg, img {
+		height: 40%;
 		width: auto;
 		display: block;
 		transition: transform .3s;
@@ -202,7 +195,7 @@ Site Logo
 	}
 	@media (max-width: $bp-laptop) {
 		float: left;
-		height: em(83);
+		height: em(90);
 		padding: em(5) em(25);
 		&:after {
 			display: none;
@@ -224,7 +217,7 @@ Search Bar
 		width: 100%;
 		padding: em(25);
 		height: auto;
-		background-color: lighten($color-primary, 5%);
+		background-color: darken($color-primary, 5%);
 		&:before {
 			display: none;
 			width: 100%;
@@ -335,8 +328,101 @@ Sub Nav
 		border-bottom: 0;
 		opacity: 1;
 	}
+	@media (min-width: $bp-laptop) {
+				&:hover {
+				ul.sub-menu { 
+				visibility: visible;
+				transform: translateX(100%) scaleX(1);
+				transition: visibility 0ms 0ms, transform 300ms 0s;
+				li { 
+					opacity: 1;
+					transition-delay: 300ms;
+					
+				}
+			}
+		}
+	}
 }
 .sub-nav-list-item a {
+	padding: em(15);
+	color: white;
+	display: block;
+	white-space: nowrap;
+	text-decoration: none;
+	transition: all .3s;
+	width: 100%;
+	background: rgba(0,0,0,0.0);
+	 &:hover {
+		background: rgba(0,0,0,0.1);
+		color: $color-secondary;
+	}
+	@media (max-width: $bp-laptop) {
+		border-bottom: solid 1px $color-primary;
+		padding: em(15) em(25);
+	}
+}
+
+/************************************************
+Sub Menu
+************************************************/
+
+.sub-menu {
+	visibility: hidden;
+	list-style: none;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: translateX(100%) scaleX(0);
+	background-color: darken($color-primary, 5%);
+	z-index: 900;
+	transform-origin: left;
+	transition: visibility 0ms 600ms, transform 200ms .1s;
+	min-width: 100%;
+	will-change: transform;
+	padding: 0;
+	border-top: 0;
+	@media (max-width: $bp-laptop) {
+		position: static;
+		max-height: 0;
+		transition: visibility 0ms 0ms;
+		transform: translateX(0) scaleX(1) scaleY(0);
+		.js-sub-nav-open & {
+			visibility: visible;
+
+			transform: scaleY(1);
+			max-height: 9999px;
+			transition: visibility 0ms 0ms;
+			li { 
+				opacity: 1;
+				transition-delay: 300ms;
+			}
+		}
+		.item a {
+			border-bottom: solid 1px $color-primary;
+			padding: em(15) em(25);
+
+		}
+	}
+}
+.item {
+	text-align: left;
+	border-bottom: solid 1px darken($color-primary, 10%);
+	opacity: 0;
+	transition: opacity 150ms 0ms;
+	line-height: 1.2;
+	font-size: $font-size-small;
+	&:last-of-type {
+		border-bottom: none;
+	}
+	@media (max-width: $bp-laptop) {
+		position: relative;
+		border-bottom: 0;
+		opacity: 1;
+		padding-left: 10px;
+	}
+}
+.item a {
 	padding: em(15);
 	color: white;
 	display: block;

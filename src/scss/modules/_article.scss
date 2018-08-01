@@ -11,6 +11,9 @@
 		margin-bottom: 0px;
 		transition: color .3s;
 		text-decoration: none;
+		span {
+			transition: color .3s;
+		}
 	}
 	p {
 		font-size: em(14);

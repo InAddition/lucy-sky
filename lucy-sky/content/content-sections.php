@@ -44,6 +44,8 @@
 				$video = get_row_layout() == 'video';
 				$image_gallery = get_row_layout() == 'image_gallery';
 				$embed = get_row_layout() == 'embed';
+				$contact_form = get_row_layout() == 'contact_form';
+				$accordions = get_row_layout() == 'accordions';
 			?>
 
 			<!--Section Title-->
@@ -74,7 +76,7 @@
 							centered-title
 						<?php } ?>
 						<?php if($s_icon) { ?>
-							&nbsp;with-icon
+							with-icon
 						<?php } ?>
 					">
 						<span
@@ -130,7 +132,9 @@
 					$s_button_position = get_sub_field('position');
 						$s_btn_center = $s_button_position == 'center';
 				?>
-				<section class="site-module">
+				<section class="site-module <?php if($s_btn_center) { ?>
+							centered
+						<?php } ?>">
 					<a href="<?php echo $s_btn_url ?> " class="
 						<?php if($s_btn_sml) { ?>
 							btn-small
@@ -145,7 +149,7 @@
 							btn-link
 						<?php } ?>
 						<?php if($s_btn_center) { ?>
-							&nbsp;btn-margin-auto
+							btn-margin-auto
 						<?php } ?>
 					" target="<?php echo $s_btn_target ?>">
 						<span>
@@ -163,6 +167,7 @@
 						<div class="hero js-slider">
 							<?php while( have_rows('slides') ): the_row(); 
 								$s_image = get_sub_field('image');
+								$s_image_alt = $s_image['alt'];
 								$s_image = $s_image['sizes']['sml_feature'];
 								$s_button = get_sub_field('button');
 								$s_btn_text = $s_button['title'];
@@ -172,11 +177,11 @@
 								$s_text_2 = get_sub_field('text_line_2');
 								$s_text_3 = get_sub_field('text_line_3');
 							?>
-								<div class="hero-slide" 
+								<div class="hero-slide <?php if(!$s_text_1 || !$s_text_2 || !$s_text_2 || !$s_btn_url) { ?>
+										no-hero-copy
+									<?php } ?>" 
 									style="background-image: url(<?php echo $s_image ?>);"
-									<?php if(!$s_text_1 || !$s_text_2 || !$s_text_2 || !$s_btn_url) { ?>
-										class="no-hero-copy"
-									<?php } ?>
+									
 									>
 									<div class="hero-brand">
 										<?php if($s_text_1 || $s_text_2 || $s_text_3) { ?>
@@ -228,6 +233,7 @@
 							<?php if( have_rows('cta_grid_items') ): ?>
 								<?php while( have_rows('cta_grid_items') ): the_row(); 
 									$s_image = get_sub_field('image');
+									$s_image_alt = $s_image['alt'];
 									$s_image = $s_image['sizes']['sml_feature'];
 									$s_button = get_sub_field('link');
 									$s_btn_url = $s_button['url'];
@@ -253,10 +259,10 @@
 							    <?php foreach( $s_type_page as $post): ?>
 							        <?php setup_postdata($post); ?>
 							        <?php 
-							        	$featured_image = get_the_post_thumbnail('sml_feature');
+							        	$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumb' );
 							        ?>
 							        <div class="cta-grid-item cta-block"
-							        	style="background-image: url(<?php echo $s_image ?>);">
+							        	style="background-image: url(<?php echo $featured_image[0] ?>);">
 							        	<div class="cta-row-container">
 							        		<a href="<?php the_permalink(); ?>"></a>
 							        		<div class="cta-row-content">
@@ -282,6 +288,7 @@
 						<?php if( have_rows('articles') ): ?>
 							<?php while( have_rows('articles') ): the_row(); 
 								$s_image = get_sub_field('image');
+								$s_image_alt = $s_image['alt'];
 								$s_image = $s_image['sizes']['thumb'];
 								$s_button = get_sub_field('button');
 								$s_btn_url = $s_button['url'];
@@ -291,7 +298,7 @@
 								$s_text = get_sub_field('text');
 							?>
 							<a href="<?php echo $s_btn_url ?>" class="article-cta" target="<?php echo $s_btn_target ?>">
-								<img src="<?php echo $s_image ?>">
+								<img src="<?php echo $s_image; ?>" alt="<?php echo  $s_image_alt; ?>" />
 								<?php if($s_title) { ?>
 									<h2><?php echo $s_title ?></h2>
 								<?php } ?>
@@ -313,10 +320,31 @@
 			<?php } ?>
 			<!--Article Grid-->
 
+			<!--Accorion Grid-->
+				<?php if($accordions) { ?>
+					<section class=" site-module">
+						<?php if( have_rows('accordion') ): ?>
+							<?php while( have_rows('accordion') ): the_row(); 
+								$s_title = get_sub_field('accordion_title');
+								$s_text = get_sub_field('accordion_content');
+							?>
+							<div class="accordion-container">
+							<button class="accordion"><?php echo $s_title ?></button>
+							<div class="panel">
+							  <?php echo $s_text ?>
+							</div>
+						</div>
+							<?php endwhile; ?> 
+						<?php endif; ?>	
+					</section>
+				<?php } ?>
+			<!--Accordion Grid-->
+
 			<!--CTA Row -->
 			<?php if($cta_row) { ?>
 				<?php 
 					$s_image = get_sub_field('image');
+					$s_image_alt = $s_image['alt'];
 					$s_image = $s_image['sizes']['feature'];
 					$s_button = get_sub_field('button');
 					$s_btn_url = $s_button['url'];
@@ -348,6 +376,7 @@
 			<?php if($image) { ?>
 				<?php 
 					$s_image = get_sub_field('image');
+					$s_image_alt = $s_image['alt'];
 					$s_image = $s_image['sizes']['full'];
 					$s_button = get_sub_field('image_link');
 					$s_btn_url = $s_button['url'];
@@ -360,7 +389,7 @@
 					<?php if(!$s_btn_url) { ?>
 					<div class="site-image">
 					<?php } ?>
-						<img src="<?php echo $s_image ?>">
+						<img src="<?php echo $s_image ?>" alt="<?php echo  $s_image_alt; ?>">
 					<?php if(!$s_btn_url) { ?>
 					</div>
 					<?php } ?>
@@ -388,8 +417,12 @@
 			<?php if($image_gallery) { ?>
 				<?php 
 					$s_image_gallery = get_sub_field('gallery_images');
+					$_gallery_type = get_sub_field('gallery_type');
+					$s_g_gal = $_gallery_type == 'gallery';
+					$s_g_slides = $_gallery_type == 'slides';
 				?>
 				<section class="site-module">
+					<?php if($s_g_gal) { ?>
 					<div class="image-gallery">
 						<?php if( $s_image_gallery ): ?>
 					        <?php foreach( $s_image_gallery as $image ): ?>
@@ -399,6 +432,18 @@
 					        <?php endforeach; ?>
 						<?php endif; ?>
 					</div>
+					<?php } ?>
+					<?php if($s_g_slides) { ?>
+						<div class="hero js-slider image-hero">
+							<?php if( $s_image_gallery ): ?>
+						        <?php foreach( $s_image_gallery as $image ): ?>
+						        	<div class="hero-slide no-hero-copy">
+						        		<img src="<?php echo $image['sizes']['sml_feature']; ?>" alt="<?php echo $image['alt']; ?>" />
+						        	</div>
+					            <?php endforeach; ?>
+					    	<?php endif; ?>
+						</div>
+					<?php } ?>
 				</section>
 			<?php } ?>
 			<!--Gallery-->
@@ -416,6 +461,16 @@
 			<?php } ?>
 			<!--Embed-->
 
+			<!--Contact Form-->
+			<?php if($contact_form) { ?>
+				<?php 
+					$s_contact = get_sub_field('contact_form_shortcode');
+				?>
+				<section class="site-module wysiwyg">
+					<?php echo $s_contact ?>
+				</section>
+			<?php } ?>
+			<!--Contact Form-->
 
 			<?php endwhile; ?> 
 		<?php endif; ?>

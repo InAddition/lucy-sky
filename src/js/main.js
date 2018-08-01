@@ -14,6 +14,13 @@ win.on( 'load', function() {
 	html.addClass( 'loaded' );
 });
 
+var winWidth;
+function updateWinWidth() {
+	winWidth = window.innerWidth;
+}
+
+win.on( 'resize load', updateWinWidth );
+
 ///////// Hamburger
 
 hamburger.click(function(e){
@@ -25,8 +32,10 @@ hamburger.click(function(e){
 ///////// Sub Nav
 
 subnav.click(function(e){
-	e.preventDefault();
-	$(this).toggleClass('js-sub-nav-open');
+	if (winWidth <= 1070 ) {
+		e.preventDefault();
+		$(this).toggleClass('js-sub-nav-open');
+	}
 });
 
 //////// Flickity
@@ -88,12 +97,31 @@ win.on( 'load resize', stickyFooter );
 IE 10
 ===============================================*/
 
-// if (navigator.userAgent.match('MSIE 10.0;')) {
-//   $('html').addClass('ie10');
-// }
+if (navigator.userAgent.match('MSIE 10.0;')) {
+  $('html').addClass('ie10');
+}
 
-// if (Object.hasOwnProperty.call(window, "ActiveXObject") && !window.ActiveXObject) {
-//     $('html').addClass('ie11');
-// }
+if (Object.hasOwnProperty.call(window, "ActiveXObject") && !window.ActiveXObject) {
+    $('html').addClass('ie11');
+}
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
 
 }); // jQuery

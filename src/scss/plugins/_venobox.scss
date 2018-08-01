@@ -137,12 +137,12 @@
 /* ------- inline window ------ */
 .vbox-inline{
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     text-align: left;
     margin: 0 auto;
     overflow: auto;
     background: #ececec;
-    padding: em(50) !important;
+    padding: em(20) !important;
 
     a {
         color: red;

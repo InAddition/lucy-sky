@@ -5,6 +5,9 @@
 	$page_title = get_row_layout() == 'page_title';
 	$page_slider = get_row_layout() == 'page_slider';
 	$text_block = get_row_layout() == 'text_block';
+	$locations = get_row_layout() == 'location_block';
+	$site_features = get_row_layout() == 'site_features';
+	$contact_form = get_row_layout() == 'contact_form';
 ?>
 
 <!--Header-->
@@ -98,7 +101,7 @@
 									</span>
 								<?php } ?>
 								<?php if($s_text_2) { ?>
-								<span class="hero-large">
+								<span class="hero-xl">
 									<?php echo $s_text_2 ?>
 								</span>
 								<?php } ?>
@@ -212,7 +215,9 @@
 			</div>
 		</section>
 		<?php if($s_btn_url) { ?>
-			<section class="site-module">
+			<section class="site-module <?php if($s_btn_center) { ?>
+						centered
+					<?php } ?>">
 				<a href="<?php echo $s_btn_url ?> " class="
 					<?php if($s_btn_sml) { ?>
 						btn-small
@@ -227,7 +232,7 @@
 						btn-link
 					<?php } ?>
 					<?php if($s_btn_center) { ?>
-						&nbsp;btn-margin-auto
+						btn-margin-auto
 					<?php } ?>
 				" target="<?php echo $s_btn_target ?>">
 					<span>
@@ -236,6 +241,155 @@
 				</a>
 			</section>
 		<?php } ?>
+	</div>
+<?php } ?>
+<!--Text Block-->
+
+
+<!--Locations-->
+<?php if($locations) { ?>
+	<div class="locations-container">
+		<h1 class="gold-thin-title">
+			Our Locations
+		</h1>
+		<div class="locations">
+			<div class="location-block">
+				<div>
+					<h2><a href="<?php bloginfo('url'); ?>/locations/broadway">Broadway</a></h2>
+					<a href="https://goo.gl/maps/zNBw8YDFx6v" target="_blank" class="location-block-info">
+						<div class="location-block-icon">
+							<?php include 'wp-content/themes/lucy-sky/images/icon-pin.svg' ?>
+						</div>
+						<address class="location-block-text">
+							2394 S. Broadway<br/>
+							Denver, CO 80210
+						</address>
+					</a>
+					<a href="tel:720-379-7295" class="location-block-info">
+						<div class="location-block-icon">
+							<?php include 'wp-content/themes/lucy-sky/images/icon-phone.svg' ?>
+						</div>
+						<div class="location-block-text">
+							720-379-7295
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="location-block">
+				<div>
+					<h2><a href="<?php bloginfo('url'); ?>/locations/wash-park">Wash Park</a></h2>
+					<a href="https://goo.gl/maps/faAcSg7xoXC2" target="_blank" class="location-block-info">
+						<div class="location-block-icon">
+							<?php include 'wp-content/themes/lucy-sky/images/icon-pin.svg' ?>
+						</div>
+						<address class="location-block-text">
+							2215 East Mississippi <br/>
+							Denver, Colorado 80210
+						</address>
+					</a>
+					<a href="tel:303-733-5500" class="location-block-info">
+						<div class="location-block-icon">
+							<?php include 'wp-content/themes/lucy-sky/images/icon-phone.svg' ?>
+						</div>
+						<div class="location-block-text">
+							303-733-5500
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="location-block">
+				<div>
+					<h2><a href="<?php bloginfo('url'); ?>/locations/galena">Galena</a></h2>
+					<a href="https://goo.gl/maps/JvGobrWA79C2" target="_blank" class="location-block-info">
+						<div class="location-block-icon">
+							<?php include 'wp-content/themes/lucy-sky/images/icon-pin.svg' ?>
+						</div>
+						<address class="location-block-text">
+							3480 S Galena St. <br/>
+							Denver, CO 80231
+						</address>
+					</a>
+					<a href="tel:720-350-4071" class="location-block-info">
+						<div class="location-block-icon">
+							<?php include 'wp-content/themes/lucy-sky/images/icon-phone.svg' ?>
+						</div>
+						<div class="location-block-text">
+							720-350-4071
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="location-block">
+				<div>
+					<h2><a href="<?php bloginfo('url'); ?>/locations/federal">Federal</a></h2>
+					<a href="https://goo.gl/maps/s6kxwc54Fh42" target="_blank" class="location-block-info">
+						<div class="location-block-icon">
+							<?php include 'wp-content/themes/lucy-sky/images/icon-pin.svg' ?>
+						</div>
+						<address class="location-block-text">
+							4444 S. Federal Blvd. <br/>
+							englewood, CO 80110
+						</address>
+					</a>
+					<a href="tel:720-350-4071" class="location-block-info">
+						<div class="location-block-icon">
+							<?php include 'wp-content/themes/lucy-sky/images/icon-phone.svg' ?>
+						</div>
+						<div class="location-block-text">
+							720-350-4071
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php } ?>
+<!--Locations-->
+
+<!--Site Features-->
+<?php if($site_features) { ?>
+	<div class="page-wrapper wood-wrapper">
+		<div class="container">
+			<div class="home-ctas">
+				<a href="https://www.lucycarescolorado.com/"  target="_blank" class="home-cta">
+					<div class="home-cta-icon home-cta-lucy"></div>
+					<h2>Lucy Cares</h2>
+					<p>Honored to lend a hand<br/>to the people of our community.</p>
+					<div class="btn-small">
+						<span>Learn More</span>
+					</div>
+				</a>
+				<a href="<?php bloginfo('url'); ?>/products" class="home-cta">
+					<div class="home-cta-icon home-cta-products"></div>
+					<h2>Products</h2>
+					<p>From flower to edibles to concentrates<br/>to pipes and everything between.</p>
+					<div class="btn-small">
+						<span>View Products</span>
+					</div>
+				</a>
+				<a href="<?php bloginfo('url'); ?>/vip-club" class="home-cta">
+					<div class="home-cta-icon home-cta-vip"></div>
+					<h2>VIP Club</h2>
+					<p>Enroll in our VIP Club<br/>for exclusive percs!</p>
+					<div class="btn-small">
+						<span>Join Now</span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+<?php } ?>
+<!--Site Features -->
+
+<!--Contact Form-->
+<?php if($contact_form) { ?>
+	<?php 
+		$s_contact = get_sub_field('contact_form_shortcode_contact_form_shortcode');
+	?>
+	<div class="content	">
+		<section class="site-module">
+			<?php echo $s_contact ?>
+		</section>
 	</div>
 <?php } ?>
 <!--Text Block-->

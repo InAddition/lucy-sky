@@ -26,108 +26,35 @@
 	<body <?php body_class( 'page-' . $post->post_name ); ?>>
 		<header>
 			<a href="<?php bloginfo('url'); ?>" class="site-logo">
-				<?php include 'images/icon-logo.svg' ?>
+
+				<img src="<?php bloginfo('template_url'); ?>/images/logo-horizontal-white.png">
 			</a>
 			<nav class="nav-flex">
 				<?php
-					//$c_menu = get_nav_menu('celebrity');
-					//$p_menu = get_nav_menu('photograhy');
-					//$co_menu = get_nav_menu('collectibles');
+					$locations_menu = get_nav_menu('locations');
+					$products_menu = get_nav_menu('products');
+					$order_online_menu = get_nav_menu('order_online');
+					$vip_club_menu = get_nav_menu('vip_club');
+					$knowledge_menu = get_nav_menu('knowledge');
+					$about_menu = get_nav_menu('about');
+					$contact_menu = get_nav_menu('contact');
+					$lucy_cares_menu = get_nav_menu('lucy_cares');
+					$wholesale_menu = get_nav_menu('wholesale');
+					$newsletter_menu = get_nav_menu('newsletter');
 				?>
 				<?php get_search_form(); ?>
 				<ul class="main-nav">
 					<li class="js-with-sub-nav">
-						<a href="<?php bloginfo('url'); ?>/" class="main-nav-item">Locations</a>
-						<!-- <?php if( count( $c_menu ) ) : ?>
-							<ul class="sub-nav-list">
-								<?php foreach($c_menu as $item) : ?>
-									<li class="sub-nav-list-item">
-										<a href="<?php echo $item->url; ?>" title="<?php echo $item->title; ?>">
-										<?php echo $item->title; ?>
-										</a>
-									</li>
-								<?php endforeach; ?>
-							</ul>
-						<?php endif; ?> -->
-						<ul class="sub-nav-list">
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-						</ul>
+						<a href="<?php bloginfo('url'); ?>/locations" class="main-nav-item with-sub-nav">Locations</a>
+						<?php if (function_exists(clean_custom_menus('locations'))) clean_custom_menus('locations'); ?>
 					</li>
 					<li class="js-with-sub-nav">
-						<a href="<?php bloginfo('url'); ?>/" class="main-nav-item">Products</a>
-						<!-- <?php if( count( $p_menu ) ) : ?>
-							<ul class="sub-nav-list">
-								<?php foreach($p_menu as $item) : ?>
-									<li class="sub-nav-list-item">
-										<a href="<?php echo $item->url; ?>" title="<?php echo $item->title; ?>">
-										<?php echo $item->title; ?>
-										</a>
-									</li>
-								<?php endforeach; ?>
-							</ul>
-						<?php endif; ?> -->
-						<ul class="sub-nav-list">
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-						</ul>
+						<a href="<?php bloginfo('url'); ?>/products" class="main-nav-item with-sub-nav">Products</a>
+						<?php if (function_exists(clean_custom_menus('products'))) clean_custom_menus('products'); ?>
 					</li>
-					<li class="js-with-sub-nav">
-						<a href="<?php bloginfo('url'); ?>/collectibles" class="main-nav-item">Order Online</a>
-						<!-- <?php if( count( $co_menu ) ) : ?>
-							<ul class="sub-nav-list">
-								<?php foreach($co_menu as $item) : ?>
-									<li class="sub-nav-list-item">
-										<a href="<?php echo $item->url; ?>" title="<?php echo $item->title; ?>"">
-										<?php echo $item->title; ?>
-										</a>
-									</li>
-								<?php endforeach; ?>
-							</ul>
-						<?php endif; ?> -->
-						<ul class="sub-nav-list">
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-						</ul>
+					<li>
+						<a href="<?php bloginfo('url'); ?>/order-online" class="main-nav-item">Order Online</a>
+						
 					</li>
 				</ul>
 			</nav>
@@ -138,151 +65,56 @@
 			</div>
 			<nav class="secondary-nav">
 				<ul class="secondary-nav-list">
-					<li class="js-with-sub-nav">
-						<a href="<?php bloginfo('url'); ?>/" class="secondary-nav-item with-sub-nav">VIP Club</a>
-						<ul class="sub-nav-list">
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-						</ul>
+					<li class="<?php if( count( $vip_club_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
+						<a href="<?php bloginfo('url'); ?>/vip-club" class="secondary-nav-item <?php if( count( $vip_club_menu ) ) : ?>with-sub-nav<?php endif; ?>">VIP Club</a>
+						<?php if (function_exists(clean_custom_menus('vip_club'))) clean_custom_menus('vip_club'); ?>
 					</li>
-					<li class="js-with-sub-nav">
-						<a href="<?php bloginfo('url'); ?>/" class="secondary-nav-item with-sub-nav">Knowledge</a>
-						<ul class="sub-nav-list">
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-						</ul>
+					<li class="<?php if( count( $knowledge_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
+						<a href="<?php bloginfo('url'); ?>/knowledge" class="secondary-nav-item <?php if( count( $knowledge_menu ) ) : ?>with-sub-nav<?php endif; ?>">Knowledge</a>
+						<?php if (function_exists(clean_custom_menus('knowledge'))) clean_custom_menus('knowledge'); ?>
 					</li>
-					<li class="js-with-sub-nav">
-						<a href="<?php bloginfo('url'); ?>/" class="secondary-nav-item with-sub-nav">About Us</a>
-						<ul class="sub-nav-list">
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-						</ul>
+					<li class="<?php if( count( $about_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
+						<a href="<?php bloginfo('url'); ?>/about-us" class="secondary-nav-item <?php if( count( $about_menu ) ) : ?>with-sub-nav<?php endif; ?>">About Us</a>
+						<?php if (function_exists(clean_custom_menus('about'))) clean_custom_menus('about'); ?>
 					</li>
-					<li class="js-with-sub-nav">
-						<a href="<?php bloginfo('url'); ?>/" class="secondary-nav-item with-sub-nav">Contact Us</a>
-						<ul class="sub-nav-list">
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-						</ul>
+					<li class="<?php if( count( $contact_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
+						<a href="<?php bloginfo('url'); ?>/contact-us" class="secondary-nav-item <?php if( count( $contact_menu ) ) : ?>with-sub-nav<?php endif; ?>">Contact Us</a>
+						<?php if (function_exists(clean_custom_menus('contact'))) clean_custom_menus('contact'); ?>
 					</li>
-					<li class="js-with-sub-nav">
-						<a href="<?php bloginfo('url'); ?>/" class="secondary-nav-item with-sub-nav">Lucy Cares</a>
-						<ul class="sub-nav-list">
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-						</ul>
+					<li class="<?php if( count( $lucy_cares_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
+						<a href="https://www.lucycarescolorado.com/" target="_blank" class="secondary-nav-item <?php if( count( $lucy_cares_menu ) ) : ?>with-sub-nav<?php endif; ?>">Lucy Cares</a>
+						<?php if (function_exists(clean_custom_menus('lucy_cares'))) clean_custom_menus('lucy_cares'); ?>
 					</li>
-					<li class="js-with-sub-nav">
-						<a href="<?php bloginfo('url'); ?>/" class="secondary-nav-item with-sub-nav">Wholesale</a>
-						<ul class="sub-nav-list">
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-							<li class="sub-nav-list-item">
-								<a href="#">
-									Navigation Link
-								</a>
-							</li>
-						</ul>
+					<li class="<?php if( count( $wholesale_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
+						<a href="<?php bloginfo('url'); ?>/wholesale" class="secondary-nav-item <?php if( count( $wholesale_menu ) ) : ?>with-sub-nav<?php endif; ?>">Wholesale</a>
+						<?php if (function_exists(clean_custom_menus('wholesale'))) clean_custom_menus('wholesale'); ?>
 					</li>
-					<li>
-						<a href="<?php bloginfo('url'); ?>/" class="secondary-nav-item">Join Our Newsletter</a>
+					<li class="<?php if( count( $newsletter_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
+						<a href="#js-hidden" data-type="inline" class="secondary-nav-item venobox <?php if( count( $newsletter_menu ) ) : ?>with-sub-nav<?php endif; ?>">Join Our Newsletter</a>
+						<?php if (function_exists(clean_custom_menus('newsletter'))) clean_custom_menus('newsletter'); ?>
 					</li>
 				</ul>
 				<ul class="social-nav">
 					<li>
-						<a href="" class="social-icon">
+						<a href="https://www.facebook.com/LucySkyCannaTique/" class="social-icon" target="_blank">
 							<?php include 'images/icon-socialMedia--facebook.svg' ?>
 						</a>
 					</li>
 					<li>
-						<a href="" class="social-icon">
+						<a href="https://twitter.com/lucyskycannabis?" class="social-icon" target="_blank">
 							<?php include 'images/icon-socialMedia--twitter.svg' ?>
 						</a>
 					</li>
 					<li>
-						<a href="" class="social-icon">
+						<a href="https://www.instagram.com/lucyskycannabisboutique/" class="social-icon" target="_blank">
 							<?php include 'images/icon-socialMedia--instagram.svg' ?>
 						</a>
 					</li>
-					<li>
+					<!-- <li>
 						<a href="" class="social-icon">
 							<?php include 'images/icon-socialMedia--youtube.svg' ?>
 						</a>
-					</li>
+					</li> -->
 				</ul>
 			</nav>
 		</header>

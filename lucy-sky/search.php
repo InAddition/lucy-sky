@@ -1,26 +1,20 @@
 <?php get_header(); ?>
-<!-- <?php 
-	$image = get_field('featured_photo');
-	$image = $image['sizes']['page-header'];
-	$show = get_field('show_photo_2');
-?> -->
-<div class="wrapper wrapper--page">
-<!--Page Title-->
-<div class="page-title-container">
-	<div class="page-title">
-		<h1>
-			<span>Search Results</span>
-		</h1>
+<div class="wrapper">
+	<div class="content white-wrapper">
+		
+			<div class="container">
+				
+					<?php $num = $wp_query->found_posts; ?>
+						<?php if (have_posts()) { ?>
+							<p>
+							<?php echo $num; ?> Results found for "<?php echo esc_html( get_search_query( false ) ); ?>"
+							</p>
+						<?php } ?>
+						<?php if (!have_posts()) { ?><p>No Results Found</p><?php } ?> 
+			</div>
+		
 	</div>
-</div>
-
-<div class="container page-container">
-	
-	<!--Post Header-->
-
-	<div class="post-copy">
-		<div class="wysiwyg">
-			<p class="type--collapsed"><?php $num = $wp_query->found_posts; if (have_posts()) : echo $num; endif;?> <?php if (!have_posts()) { ?>No<?php } ?> Results Found</p>
+	<div class="content">
 			<?php if ( have_posts() ) : ?>
 				<?php
 				// Start the loop.
@@ -40,8 +34,6 @@
 				get_template_part( 'content', 'none' );
 			endif;
 			?>
-		</div>
 	</div>
-	
 </div>
 <?php get_footer(); ?>

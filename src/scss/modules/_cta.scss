@@ -62,7 +62,6 @@ CTA Row
 	width: 100%;
 	min-height: 350px;
 	margin-bottom: em(80);
-	background-image: url(../images/temp/temp-hero.jpg);
 	&:last-of-type {
 		margin-bottom: 0;
 	}
@@ -145,10 +144,6 @@ CTA Block
 
 .cta-block {
 	@extend %cta-master;
-	background-image: url(../images/temp/temp-hero.jpg);
-	&:last-of-type {
-		margin-bottom: 0;
-	}
 	.cta-row-content h2 {
 		font-family: $font-title-black;
 		font-size: $font-size-regular;
@@ -175,13 +170,12 @@ CTA grid
 
 .cta-grid-item {
 	@extend %cta-master;
-	background-image: url(../images/temp/temp-hero.jpg);
 	width: 32.33%;
 	margin: 0.5%;
 	min-height: em(220);
 	.cta-row-content h2 {
 		font-family: $font-title-black;
-		font-size: $font-size-regular;
+		font-size: $font-size-medium;
 	}
 	@media (max-width: $bp-tablet) {
 		width: 49%;

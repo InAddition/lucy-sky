@@ -30,23 +30,23 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.wood-wrapper {
+.wood-wrapper, .CBD-wrapper, .CBD-block {
 	@extend %master-wrapper;
 	background-image: url(../images/Wood-Grain-BG.jpg);
 	border-bottom: solid 1px $color-primary-dark;
 
 }
-.blue-wrapper {
+.blue-wrapper, .Indica-wrapper, .Indica-block {
 	@extend %master-wrapper;
 	background-image: url(../images/BlueBackground.jpg);
 	border-bottom: solid 1px $color-primary-dark;
 }
-.red-wrapper {
+.red-wrapper, .Sativa-wrapper, .Sativa-block {
 	@extend %master-wrapper;
 	background-image: url(../images/RedBackground.jpg);
 	border-bottom: solid 1px $color-accent-dark;
 }
-.gold-wrapper {
+.gold-wrapper, .Hybrid-wrapper, .Hybrid-block {
 	@extend %master-wrapper;
 	background-image: url(../images/GoldBackground.jpg);
 	border-bottom: solid 1px $color-secondary-dark;
@@ -59,11 +59,14 @@
 .content {
 	width: 100%;
 	padding: em(60);
-	@media (max-width: $bp-laptop) {
-		padding: em(60);
+	@media (max-width: $bp-desktop) {
+		padding: em(50);
 	}
-	@media (max-width: $bp-tablet) {
+	@media (max-width: $bp-laptop) {
 		padding: em(40);
+	}
+	@media (max-width: $bp-mobile) {
+		padding: em(20);
 	}
 }
 section {
@@ -75,25 +78,13 @@ section {
 	margin: 0 auto;
 }
 .site-module {
-	margin-bottom: em(60);
-	&:last-of-type {
+	margin-bottom: em(40);
+	&:last-child, > :last-child {
 		margin-bottom: 0;
-	}
-	@media (max-width: $bp-laptop) {
-		margin-bottom: em(50);
-		:last-child {
-			margin-bottom: 0;
-		}
-	}
-	@media (max-width: $bp-tablet) {
-		margin-bottom: em(40);
-		:last-child {
-			margin-bottom: 0;
-		}
 	}
 	@media (max-width: $bp-mobile) {
 		margin-bottom: em(30);
-		:last-child {
+		> :last-child {
 			margin-bottom: 0;
 		}
 	}
@@ -143,6 +134,9 @@ One Column and Sidebar
 	.content {
 		padding: 0;
 		margin-bottom: em(40);
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 	.wood-wrapper,
 	.blue-wrapper,
@@ -189,7 +183,7 @@ One Column and Sidebar
 }
 aside {
 	width: 400px;
-	padding: em(40);
+	padding: em(30);
 	flex-shrink: 0;
 	background-color: rgba(255,255,255,0.5);
 	.content {
@@ -205,9 +199,6 @@ aside {
 	}
 	.site-module {
 		margin-bottom: em(20);
-		&:last-of-type {
-			margin-bottom: 0;
-		}
 		@media (max-width: $bp-laptop) {
 			margin-bottom: em(30);
 			:last-child {
@@ -229,10 +220,17 @@ aside {
 	}
 	section {
 		width: 100%;
-		&:last-of-type {
+		&:last-child {
 			margin-bottom: 0 !important;
 		}
 		font-size: 75%;
+	}
+	.btn-double-border {
+		width: 100%;
+		font-size: 100%;
+	}
+	:last-child {
+		margin-bottom: 0;
 	}
 	@media (max-width: $bp-tablet) {
 		width: 100%;
@@ -245,6 +243,27 @@ Two Column
 **************************************/
 
 section.half-column {
+	width: 48%;
+	margin: 0.5%;
+	margin-bottom: 0.5% !important;
+	padding: em(40);
+	@media (max-width: $bp-laptop) {
+		padding: em(30);
+	}
+	&:last-of-type {
+		margin: 0.5% !important;
+	}
+	font-size: 85%;
+	&.no-background {
+		// background-color: rgba(255,255,255,0.5);
+	}
+
+	@media (max-width: $bp-tablet) {
+		width: 100%;
+		padding: em(30);
+	}
+}
+.content-two-column .content {
 	width: 48%;
 	margin: 0.5%;
 	margin-bottom: 0.5% !important;

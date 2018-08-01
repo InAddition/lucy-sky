@@ -1,0 +1,35 @@
+section.category {
+	text-align: right;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.searchandfilter li,
+.searchandfilter ul {
+	display: flex !important;
+	height: 30px;
+	input[type="submit"] {
+		position: relative;
+		padding: 0 em(15);
+		border: solid 1px $color-primary;
+		background-color: $color-primary;
+		display: inline-block;
+		text-align: center;
+		text-decoration: none;
+		transition: all .2s;
+			color: white;
+			font-size: $font-size-small;
+			font-family: $font-family;
+			text-align: center;
+			text-decoration: none;
+			transition: all .2s;
+		&:hover {
+			background-color: $color-primary-light;
+				color: white;
+		}
+	}
+	h4 {
+		padding-right: 10px;
+		margin: 0 !important;
+	}
+}

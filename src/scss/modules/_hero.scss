@@ -1,7 +1,7 @@
 .header {
 	width: 100%;
 	display: flex;
-	min-height: 200px;
+	min-height: 300px;
 	align-items: center;
 	justify-content: center;
 	position: relative;
@@ -26,7 +26,6 @@
 		position: relative;
 		z-index: 3;
 		font-size: em(48);
-		letter-spacing: -0.05em;
 		text-transform: uppercase;
 		color: white;
 		font-family: $font-title-black;
@@ -69,6 +68,12 @@
 		}
 	}
 }
+.image-hero {
+	height: auto;
+	.hero-slide {
+		height: auto;
+	}
+}
 .hero-slide {
 	position: relative;
 	width: 100%;
@@ -76,7 +81,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-image: url(../images/temp/temp-hero.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -93,6 +97,10 @@
 		&:before {
 			display: none;
 		}
+	}
+	img {
+		width: 100%;
+		height: auto;
 	}
 	@media (max-width: $bp-laptop) {
 		height: 350px;
@@ -156,7 +164,7 @@
 			margin-bottom: 20px;
 		}
 		&.hero-xl {
-			font-size: em(80);
+			font-size: em(64);
 			letter-spacing: -0.05em;
 			text-transform: uppercase;
 			color: white;

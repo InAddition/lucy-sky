@@ -1,0 +1,37 @@
+.pagination {
+	text-align: left;
+	margin: em(60);
+	margin-bottom: em(80);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: $font-size-small;
+	list-style: none;
+	.pagination-label {
+		padding-right: 15px;
+	}
+	.pagination-item {
+		display: flex;
+		background: $color-primary;
+		transition: background .3s;
+		margin: 0 1px;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		justify-content: center;
+		a {
+			color: white;
+			text-decoration: none;
+			display: flex;
+			margin: 0;
+			justify-content: center;
+			align-items: center;
+		}
+		&:hover {
+			background: $color-accent;
+		}
+	}
+	.pagination-item-current {
+		background: $color-primary-light;
+	}
+}

@@ -1,7 +1,7 @@
 /********************************************************
 Text Colors
 ********************************************************/
-.no-background {
+.no-background, .white-wrapper {
 	.btn-double-border {
 		span {
 			color: $color-accent;
@@ -37,7 +37,7 @@ Text Colors
 			color: black;
 		}
 		&:hover {
-			h2 {
+			h2, span {
 				color: $color-secondary;
 			}
 			.btn-small {
@@ -49,10 +49,14 @@ Text Colors
 		}
 	}
 }
-.wood-wrapper, .blue-wrapper, .red-wrapper {
+.wood-wrapper, .blue-wrapper, .red-wrapper, .CBD-wrapper, .Sativa-wrapper, .Indica-wrapper, 
+.CBD-block, .Sativa-block, .Indica-block {
 	.wysiwyg {
 		color: white;
-		h1, h2, h3, a {
+		h1, h2, h3 {
+			color: white;
+		}
+		a {
 			color: $color-secondary;
 		}
 		p, ul, li, h4, h5, h6 {
@@ -68,7 +72,7 @@ Text Colors
 	.large-title span, 
 	.small-title span,
 	.thin-title span {
-		color: $color-secondary;
+		color: white;
 	}
 	.article-cta {
 		h2 {
@@ -131,10 +135,13 @@ Text Colors
 		}
 	}
 }
-.gold-wrapper {
+.gold-wrapper, .Hybrid-wrapper, .Hybrid-block {
 	.wysiwyg {
 		color: white;
-		h1, h2, h3, a {
+		h1, h2, h3 {
+			color: white;
+		}
+		a {
 			color: $color-accent;
 		}
 		p, ul, li, h4, h5, h6 {
@@ -144,7 +151,7 @@ Text Colors
 	.large-title span, 
 	.small-title span,
 	.thin-title span {
-		color: $color-accent;
+		color: white;
 	}
 	.btn-double-border {
 		span {
@@ -239,11 +246,11 @@ Page Titles
 .large-title {
 	margin: 0;
 	padding: 0;
-	font-size: em(34);
+	font-size: em(28);
 	span {
 		line-height: 1;
 		font-family: $font-title-inline;
-		font-size: $font-size-large-title;
+		font-size: em(28);
 		text-transform: uppercase;
 		color: $color-primary;
 		display: inline block;
@@ -275,11 +282,11 @@ Page Titles
 .small-title {
 	margin: 0;
 	padding: 0;
-	font-size: $font-size-regular;
+	font-size: $font-size-medium;
 	span {
 		line-height: 1;
-		font-family: $font-title-black;
-		font-size: $font-size-regular;
+		font-family: $font-title-inline;
+		font-size: $font-size-medium;
 		text-transform: uppercase;
 		color: $color-primary;
 		display: inline block;
@@ -341,23 +348,23 @@ Page Copy
 		}
 		h1 {
 			font-size: $font-size-large;
-			color: $color-primary;
+			color: $color-accent;
 		}
 		h2 {
 			font-size: $font-size-large-title;
-			color: $color-primary;
+			color: $color-accent;
 			margin-bottom: .67em;
 		}
 		h3 {
 			font-size: $font-size-regular;
-			color: $color-primary;
+			color: $color-accent;
 			margin-bottom: .67em;
 			line-height: 1.2;
 		}
 		h4, h5, h6 {
 			font-size: $font-size-medium;
 			font-weight: $font-regular;
-			color: $black;
+			color: $color-accent;
 			margin-bottom: .67em;
 			line-height: 1.2;
 		}
@@ -369,7 +376,7 @@ Page Copy
 			}
 		}
 		p, ul {
-			font-size: em(18);
+			font-size: em(16);
 			margin-bottom: em(25);
 			letter-spacing: 0.025em;
 			font-weight: $font-regular;
@@ -378,14 +385,13 @@ Page Copy
 		strong, b {
 			font-weight: $font-bold;
 		}
-		img {
-			width: 100%;
-			display: block;
-			height: auto;
-			margin-bottom: em(40);
-		}
-		:last-child {
+		> :last-child {
 			margin-bottom: 0;
+		}
+		img {
+			max-width: 100%;
+			display: inline-block;
+			height: auto;
 		}
 	@media (max-width: $bp-laptop) {
 		font-size: 90%;

@@ -1,4 +1,3 @@
-<?php /* Template Name: Two Columns */ ?>
 <?php get_header(); ?>
 <div class="wrapper wrapper-two-column">
 	
