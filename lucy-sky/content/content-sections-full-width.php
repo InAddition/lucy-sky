@@ -77,8 +77,12 @@
 	<?php if( have_rows('feature_slides_slides') ): ?>
 			<div class="hero js-slider">
 				<?php while( have_rows('feature_slides_slides') ): the_row(); 
+					$s_bg_type = get_sub_field('background_type');
+					$s_bg_image = $s_bg_type == 'image_bg';
+					$s_bg_video = $s_bg_type == 'video_bg';
 					$s_image = get_sub_field('image');
-					$s_image = $s_image['sizes']['sml_feature'];
+					$s_image = $s_image['sizes']['feature'];
+					$s_video = get_sub_field('video');
 					$s_button = get_sub_field('button');
 					$s_btn_text = $s_button['title'];
 					$s_btn_url = $s_button['url'];
@@ -87,11 +91,12 @@
 					$s_text_2 = get_sub_field('text_line_2');
 					$s_text_3 = get_sub_field('text_line_3');
 				?>
-					<div class="hero-slide" 
-						style="background-image: url(<?php echo $s_image ?>);"
-						<?php if(!$s_text_1 || !$s_text_2 || !$s_text_2 || !$s_btn_url) { ?>
-							class="no-hero-copy"
-						<?php } ?>
+					<div class="hero-slide <?php if(!$s_text_1 || !$s_text_2 || !$s_text_2 || !$s_btn_url) { ?>
+							no-hero-copy
+						<?php } ?>" 
+						
+						style="<?php if($s_bg_image) { ?>background-image: url(<?php echo $s_image ?>)<?php } ?>;"
+						
 						>
 						<div class="hero-brand">
 							<?php if($s_text_1 || $s_text_2 || $s_text_3) { ?>
@@ -120,6 +125,14 @@
 								</a>
 							<?php } ?>
 						</div>
+							<?php if($s_bg_video) { ?>
+								<div class="hero-video-container">
+									<video playsinline autoplay muted loop class="hero-video">
+						    		    	<source src="<?php echo $s_video ?>" type="video/mp4">
+						    		    	<source src="<?php echo $s_video ?>" type="video/ogg">
+						    		</video>
+						    	</div>
+							<?php } ?>
 					</div>
 				<?php endwhile; ?> 
 			</div>
@@ -299,7 +312,7 @@
 			</div>
 			<div class="location-block">
 				<div>
-					<h2><a href="<?php bloginfo('url'); ?>/locations/galena">Galena</a></h2>
+					<h2><a href="<?php bloginfo('url'); ?>/locations/havana">Havana</a></h2>
 					<a href="https://goo.gl/maps/JvGobrWA79C2" target="_blank" class="location-block-info">
 						<div class="location-block-icon">
 							<?php include 'wp-content/themes/lucy-sky/images/icon-pin.svg' ?>

@@ -2411,11 +2411,8 @@ Hamburger
   height: 100%;
   z-index: 1;
   background: black;
-}
-@media (max-width: 900px) {
-  .hero-video-container {
-    display: none;
-  }
+  background-size: cover;
+  background-image: url(../images/temp/temp-hero.jpg);
 }
 
 .hero-video {
@@ -2430,7 +2427,6 @@ Hamburger
   height: auto;
   z-index: -100;
   background: black;
-  opacity: 0.3;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
 }
@@ -2713,6 +2709,41 @@ Hamburger
 .active:after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.age-gate form {
+  background: transparent !important;
+}
+
+.age-gate-heading {
+  width: 300px;
+  padding-bottom: 30px !important;
+}
+.age-gate-heading img {
+  display: block;
+  width: 300px;
+}
+
+.age-gate-submit-yes,
+.age-gate-submit-no {
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: background 0.3s !important;
+  transition: background 0.3s !important;
+  border-radius: 0 !important;
+  font-family: "Montserrat", sans-serif !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  width: 100px !important;
+  font-size: 14px !important;
+  color: white !important;
+  margin-top: 20px !important;
+  -webkit-transition: background .3s !important;
+  transition: background .3s !important;
+  border: solid 1px #b0b9be !important;
+}
+.age-gate-submit-yes:hover,
+.age-gate-submit-no:hover {
+  background: #b0b9be !important;
 }
 
 #js-hidden {
@@ -3282,6 +3313,19 @@ aside .page-location-info .location-block-info:last-child {
   width: 25em;
   height: 16.875em;
   margin: 0 0.5em;
+}
+
+.js-slider-2 .flickity-slider a.article-carousel-cell {
+  width: 18.75em !important;
+  font-size: 90% !important;
+  margin: 0 15px !important;
+  position: relative !important;
+  height: 23.75em;
+}
+
+.article-carousel.js-slider-2 .flickity-prev-next-button {
+  position: absolute;
+  top: -450px;
 }
 
 .wpcf7 br {

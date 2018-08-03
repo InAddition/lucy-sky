@@ -23,3 +23,17 @@
 	height: em(270);
 	margin: 0 em(8);
 }
+
+.js-slider-2 .flickity-slider a.article-carousel-cell {
+	width: em(300) !important;
+	font-size: 90% !important;
+	margin: 0 15px !important;
+	position: relative !important;
+	height: em(380);
+}
+.article-carousel.js-slider-2 {
+	.flickity-prev-next-button {
+		position: absolute;
+		top: -450px;
+	} 
+}

@@ -12,7 +12,7 @@
 	  	<?php endif; ?>
 	  ">
 	  	<section class="site-module">
-	  		<h1 class="large-title centered-title">
+	  		<h1 class="large-title centered-title strain-title">
 	  			<span>
 	  				<?php the_title(); ?>
 	  			</span>
@@ -71,58 +71,43 @@
 	  	if( $term ): ?>
 	  	<?php echo $term->name; ?>
 	  	<?php endif; ?> Strains</h1>
-	
+		<?php
+			$query = new WP_Query(array(
+				'post_type' => 'cannabisstrains',
+				'orderby'=> 'title',
+				'order' => 'ASC',
+				'tax_query' => array(
+				    array(
+				        'taxonomy' => 'straintype',
+				        'field' => 'name',
+				        'terms' => $term->name
+				        )
+				    )
+			));
+		?>
+			<?php if ( $query->have_posts() ) { ?>
+			<div class="carousel js-slider-2 article-carousel">
+				<?php while ( $query->have_posts() ) { $query->the_post(); ?>
+					<?php setup_postdata($post); ?>
+					<?php
+						$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ));
+					?>
+			
 
-		
+					
+						<a href="<?php the_permalink(); ?>" class="article-cta strain article-carousel-cell">
+							<img src="<?php echo $featured_image[0] ?>" alt="<?php the_title(); ?>" />
+							<h2 class="small-title"><span><?php the_title(); ?></span></h2>
+						</a>
+					
 
+					
 
-		        				<?php
-		        						
-		        						$query = new WP_Query(array(
-		        							'post_type' => 'cannabisstrains',
-		        							'orderby'=> 'title',
-		        							'order' => 'ASC',
-		        							'tax_query' => array(
-		        							    array(
-		        							        'taxonomy' => 'straintype',
-		        							        'field' => 'name',
-		        							        'terms' => $term->name
-		        							        )
-		        							    )
-		        							
-		        						));
-		        					?>
-		        					<?php if ( $query->have_posts() ) { ?>
-		        					<div class="carousel js-slider-2">
-		        						<?php while ( $query->have_posts() ) { $query->the_post(); ?>
-		        							<?php setup_postdata($post); ?>
-		        							<?php
-		        								$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ));
-		        							?>
-		        					
-
-		        							<div class="carousel-cell cta-block"
-		        							style="background-image: url(<?php echo $featured_image[0] ?>);"
-		        							>
-
-
-		        								<div class="cta-row-container">
-		        									<a href="<?php the_permalink(); ?>"></a>
-		        									<div class="cta-row-content">
-		        										<h2>
-		        											<?php the_title(); ?>
-		        										</h2>
-		        									</div>
-		        								</div>
-		        							</div>
-
-		        						<?php } ?>
-		        						<?php wp_reset_postdata(); ?>
-		        					</div>
-		        				
-		        				<?php } else { ?>
-		        				
-		        				<?php } ?>
+				<?php } ?>
+				<?php wp_reset_postdata(); ?>
+			</div>
+		<?php } else { ?>
+		<?php } ?>
 		       
 			
 		

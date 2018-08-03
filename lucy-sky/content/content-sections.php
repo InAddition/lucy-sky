@@ -166,7 +166,11 @@
 					<section class="site-module">
 						<div class="hero js-slider">
 							<?php while( have_rows('slides') ): the_row(); 
+								$s_bg_type = get_sub_field('background_type');
+								$s_bg_image = $s_bg_type == 'image_bg';
+								$s_bg_video = $s_bg_type == 'video_bg';
 								$s_image = get_sub_field('image');
+								$s_video = get_sub_field('video');
 								$s_image_alt = $s_image['alt'];
 								$s_image = $s_image['sizes']['sml_feature'];
 								$s_button = get_sub_field('button');
@@ -180,10 +184,14 @@
 								<div class="hero-slide <?php if(!$s_text_1 || !$s_text_2 || !$s_text_2 || !$s_btn_url) { ?>
 										no-hero-copy
 									<?php } ?>" 
-									style="background-image: url(<?php echo $s_image ?>);"
+									
+									style="<?php if($s_bg_image) { ?>background-image: url(<?php echo $s_image ?>)<?php } ?>;"
 									
 									>
 									<div class="hero-brand">
+										<?php if($s_bg_image) { ?>
+											Test
+										<?php } ?>
 										<?php if($s_text_1 || $s_text_2 || $s_text_3) { ?>
 										<h1>
 											<?php if($s_text_1) { ?>
@@ -210,6 +218,13 @@
 											</a>
 										<?php } ?>
 									</div>
+									<?php if($s_bg_video) { ?>
+										<div class="hero-video-container">
+											<video playsinline autoplay muted loop class="hero-video">
+								    		    <source src="<?php echo $s_video ?>" type="video/mp4">
+								    		</video>
+								    	</div>
+									<?php } ?>
 								</div>
 							<?php endwhile; ?> 
 						</div>

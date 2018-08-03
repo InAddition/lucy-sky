@@ -63,10 +63,9 @@ win.on( 'resize', function() {
 var flickityGallery2 = $( '.js-slider-2' );
 
 flickityGallery2.flickity({
-	cellAlign: 'center',
+	cellAlign: 'left',
 	contain: true,
 	autoPlay: 4500,
-	wrapAround: true,
 	pageDots: false,
 	prevNextButtons: true,
 	percentPosition: false,
@@ -74,6 +73,13 @@ flickityGallery2.flickity({
 });
 
 var flickityGalleryData2 = flickityGallery2.data( 'flickity' );
+
+
+flickityGallery.find('video').each( function( i, video ) {
+    video.play();
+    $( video ).on( 'loadeddata', onLoadeddata );
+  });
+
 
 win.on( 'resize', function() {
 	if( flickityGalleryData2 ) {
