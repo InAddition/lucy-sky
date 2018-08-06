@@ -93,8 +93,8 @@ body {
   margin: 0;
   line-height: 1.5;
   opacity: 0;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
   overflow: hidden;
   position: relative;
 }
@@ -2239,6 +2239,10 @@ Hamburger
   background-color: #c3a767;
 }
 
+.current-menu {
+  color: #c3a767 !important;
+}
+
 .header {
   width: 100%;
   display: -webkit-box;
@@ -2368,7 +2372,7 @@ Hamburger
   height: 100%;
   z-index: 2;
   position: absolute;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   content: '';
   opacity: 0.5;
 }
@@ -2491,6 +2495,9 @@ Hamburger
   position: relative;
   text-align: center;
   padding: 0 30px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
 }
 .hero-brand a {
   margin: 0 auto;
@@ -3129,6 +3136,38 @@ aside .page-location-info .location-block-text {
 }
 aside .page-location-info .location-block-info:last-child {
   margin-bottom: 0;
+}
+
+/*************************************
+Map
+**************************************/
+.wpgmza_map {
+  margin-bottom: 30px;
+}
+
+.wpgmaps_mlist_row.wpgmza_basic_row {
+  padding: 25px !important;
+}
+
+.wpgmza-content-address-holder p.wpgmza-content-address-holder-inner {
+  line-height: 1;
+  font-family: "FalcoBlack", sans-serif;
+  font-size: 1.5em !important;
+  text-transform: uppercase;
+  color: #42526f;
+  display: inline block;
+}
+.wpgmza-content-address-holder p.wpgmza-content-address-holder-inner a {
+  text-decoration: none;
+}
+
+.wpgmza_basic_row .wpgmza-content-address-holder img {
+  display: none;
+}
+
+.wpgmza_basic_row .wpgmza-address {
+  font-size: 18px;
+  margin-bottom: 25px;
 }
 
 .strain-header img {
@@ -3876,6 +3915,16 @@ Page Copy
 }
 .small-copy :last-child {
   margin-bottom: 0;
+}
+
+img.alignleft {
+  padding-right: 16px;
+  float: left;
+}
+
+img.alignright {
+  padding-left: 16px;
+  float: right;
 }
 
 .site-image {

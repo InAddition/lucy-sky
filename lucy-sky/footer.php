@@ -24,6 +24,11 @@
 									<?php include 'images/icon-socialMedia--instagram.svg' ?>
 								</a>
 							</li>
+							<li>
+								<a href="https://www.pinterest.com/lucyskycannabisboutique/" class="social-icon" target="_blank">
+									<?php include 'images/icon-socialMedia--pinterest.svg' ?>
+								</a>
+							</li>
 						</ul>
 					</div>
 				</div>

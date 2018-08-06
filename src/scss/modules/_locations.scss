@@ -166,3 +166,32 @@ aside .page-location-info {
 		margin-bottom: 0;
 	}
 }
+
+/*************************************
+Map
+**************************************/
+
+.wpgmza_map {
+	margin-bottom: 30px;
+}
+.wpgmaps_mlist_row.wpgmza_basic_row {
+	padding: 25px !important;
+}
+.wpgmza-content-address-holder p.wpgmza-content-address-holder-inner {
+	line-height: 1;
+	font-family: $font-title-black;
+	font-size: $font-size-medium !important;
+	text-transform: uppercase;
+	color: $color-primary;
+	display: inline block;
+	a {
+		text-decoration: none;
+	}
+}
+.wpgmza_basic_row .wpgmza-content-address-holder img {
+	display: none;
+}
+.wpgmza_basic_row .wpgmza-address {
+	font-size: 18px;
+	margin-bottom: 25px;
+}

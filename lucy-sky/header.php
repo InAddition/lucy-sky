@@ -34,10 +34,10 @@
 					$locations_menu = get_nav_menu('locations');
 					$products_menu = get_nav_menu('products');
 					$order_online_menu = get_nav_menu('order_online');
-					$vip_club_menu = get_nav_menu('vip_club');
+					$vip = get_nav_menu('vip');
 					$knowledge_menu = get_nav_menu('knowledge');
-					$about_menu = get_nav_menu('about');
-					$contact_menu = get_nav_menu('contact');
+					$about = get_nav_menu('about');
+					$contact = get_nav_menu('contact');
 					$lucy_cares_menu = get_nav_menu('lucy_cares');
 					$wholesale_menu = get_nav_menu('wholesale');
 					$newsletter_menu = get_nav_menu('newsletter');
@@ -45,15 +45,38 @@
 				<?php get_search_form(); ?>
 				<ul class="main-nav">
 					<li class="js-with-sub-nav">
-						<a href="<?php bloginfo('url'); ?>/locations" class="main-nav-item with-sub-nav">Locations</a>
-						<?php if (function_exists(clean_custom_menus('locations'))) clean_custom_menus('locations'); ?>
+						<a href="<?php bloginfo('url'); ?>/locations" class="main-nav-item with-sub-nav
+						 <?php if(is_tree(get_page_id('locations'))){ echo ' current-menu'; } ?>
+						 ">Locations</a>
+
+						<ul class="sub-nav-list">
+						<?php foreach($locations_menu as $item) : ?>
+							<li class="sub-nav-list-item">
+								<a href="<?php echo $item->url; ?>" class="<?php if($item->object_id == $post->ID){ echo ' current-menu'; } ?>">
+									<?php echo $item->title; ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+						</ul>
 					</li>
 					<li class="js-with-sub-nav">
-						<a href="<?php bloginfo('url'); ?>/products" class="main-nav-item with-sub-nav">Products</a>
-						<?php if (function_exists(clean_custom_menus('products'))) clean_custom_menus('products'); ?>
+						<a href="<?php bloginfo('url'); ?>/products" class="main-nav-item with-sub-nav
+							<?php if(is_tree(get_page_id('products'))){ echo ' current-menu'; } ?>
+							">Products</a>
+						<ul class="sub-nav-list">
+						<?php foreach($products_menu as $item) : ?>
+							<li class="sub-nav-list-item">
+								<a href="<?php echo $item->url; ?>" class="<?php if($item->object_id == $post->ID){ echo ' current-menu'; } ?>">
+									<?php echo $item->title; ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+						</ul>
 					</li>
 					<li>
-						<a href="<?php bloginfo('url'); ?>/order-online" class="main-nav-item">Order Online</a>
+						<a href="<?php bloginfo('url'); ?>/order-online" class="main-nav-item
+							<?php if(is_tree(get_page_id('order-online'))){ echo ' current-menu'; } ?>
+							">Order Online</a>
 						
 					</li>
 				</ul>
@@ -65,33 +88,96 @@
 			</div>
 			<nav class="secondary-nav">
 				<ul class="secondary-nav-list">
-					<li class="<?php if( count( $vip_club_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
-						<a href="<?php bloginfo('url'); ?>/vip-club" class="secondary-nav-item <?php if( count( $vip_club_menu ) ) : ?>with-sub-nav<?php endif; ?>">VIP Club</a>
-						<?php if (function_exists(clean_custom_menus('vip_club'))) clean_custom_menus('vip_club'); ?>
+					<li class="<?php if( count( $vip ) ) : ?>js-with-sub-nav<?php endif; ?>">
+						<a href="<?php bloginfo('url'); ?>/v-i-p-club" class="secondary-nav-item <?php if( count( $vip ) ) : ?>with-sub-nav<?php endif; ?> 
+						<?php if(is_tree(get_page_id('v-i-p-club'))){ echo ' current-menu'; } ?>
+						">V.I.P. Club</a>
+						<ul class="sub-nav-list">
+						
+						<?php foreach($vip as $item) : ?>
+							<li class="sub-nav-list-item">
+								<a href="<?php echo $item->url; ?>"<?php if($item->object_id == $post->ID){ echo ' class="current-menu"'; } ?>>
+									<?php echo $item->title; ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+						</ul>
 					</li>
 					<li class="<?php if( count( $knowledge_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
-						<a href="<?php bloginfo('url'); ?>/knowledge" class="secondary-nav-item <?php if( count( $knowledge_menu ) ) : ?>with-sub-nav<?php endif; ?>">Knowledge</a>
-						<?php if (function_exists(clean_custom_menus('knowledge'))) clean_custom_menus('knowledge'); ?>
+						<a href="<?php bloginfo('url'); ?>/knowledge" class="secondary-nav-item <?php if( count( $knowledge_menu ) ) : ?>with-sub-nav<?php endif; ?>
+						<?php if(is_tree(get_page_id('knowledge'))){ echo ' current-menu'; } ?>
+						">Knowledge</a>
+						<ul class="sub-nav-list">
+						<?php foreach($knowledge_menu as $item) : ?>
+							<li class="sub-nav-list-item">
+								<a href="<?php echo $item->url; ?>"<?php if($item->object_id == $post->ID){ echo ' class="current-menu"'; } ?>>
+									<?php echo $item->title; ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+						</ul>
 					</li>
-					<li class="<?php if( count( $about_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
-						<a href="<?php bloginfo('url'); ?>/about-us" class="secondary-nav-item <?php if( count( $about_menu ) ) : ?>with-sub-nav<?php endif; ?>">About Us</a>
-						<?php if (function_exists(clean_custom_menus('about'))) clean_custom_menus('about'); ?>
+					<li class="<?php if( count( $about ) ) : ?>js-with-sub-nav<?php endif; ?>">
+						<a href="<?php bloginfo('url'); ?>/about-us" class="secondary-nav-item <?php if( count( $about ) ) : ?>with-sub-nav<?php endif; ?> 
+						<?php if(is_tree(get_page_id('about-us'))){ echo ' current-menu'; } ?>
+						">About Us</a>
+						<ul class="sub-nav-list">
+						
+						<?php foreach($about as $item) : ?>
+							<li class="sub-nav-list-item">
+								<a href="<?php echo $item->url; ?>"<?php if($item->object_id == $post->ID){ echo ' class="current-menu"'; } ?>>
+									<?php echo $item->title; ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+						</ul>
 					</li>
-					<li class="<?php if( count( $contact_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
-						<a href="<?php bloginfo('url'); ?>/contact-us" class="secondary-nav-item <?php if( count( $contact_menu ) ) : ?>with-sub-nav<?php endif; ?>">Contact Us</a>
-						<?php if (function_exists(clean_custom_menus('contact'))) clean_custom_menus('contact'); ?>
+					<li class="<?php if( count( $contact ) ) : ?>js-with-sub-nav<?php endif; ?>">
+						<a href="<?php bloginfo('url'); ?>/contact-us" class="secondary-nav-item <?php if( count( $contact ) ) : ?>with-sub-nav<?php endif; ?> 
+						<?php if(is_tree(get_page_id('contact-us'))){ echo ' current-menu'; } ?>
+						">Contact Us</a>
+						<ul class="sub-nav-list">
+						
+						<?php foreach($contact as $item) : ?>
+							<li class="sub-nav-list-item">
+								<a href="<?php echo $item->url; ?>"<?php if($item->object_id == $post->ID){ echo ' class="current-menu"'; } ?>>
+									<?php echo $item->title; ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+						</ul>
 					</li>
 					<li class="<?php if( count( $lucy_cares_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
-						<a href="https://www.lucycarescolorado.com/" target="_blank" class="secondary-nav-item <?php if( count( $lucy_cares_menu ) ) : ?>with-sub-nav<?php endif; ?>">Lucy Cares</a>
-						<?php if (function_exists(clean_custom_menus('lucy_cares'))) clean_custom_menus('lucy_cares'); ?>
+						<a href="https://www.lucycarescolorado.com/" target="_blank" class="secondary-nav-item <?php if( count( $lucy_cares_menu ) ) : ?>with-sub-nav<?php endif; ?>
+						<?php if(is_tree(get_page_id('lucy-cares'))){ echo ' current-menu'; } ?>
+						">Lucy Cares</a>
+						<ul class="sub-nav-list">
+						<?php foreach($lucy_cares_menu as $item) : ?>
+							<li class="sub-nav-list-item">
+								<a href="<?php echo $item->url; ?>" class="<?php if($item->object_id == $post->ID){ echo ' current-menu'; } ?>">
+									<?php echo $item->title; ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+						</ul>
 					</li>
 					<li class="<?php if( count( $wholesale_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
-						<a href="<?php bloginfo('url'); ?>/wholesale" class="secondary-nav-item <?php if( count( $wholesale_menu ) ) : ?>with-sub-nav<?php endif; ?>">Wholesale</a>
-						<?php if (function_exists(clean_custom_menus('wholesale'))) clean_custom_menus('wholesale'); ?>
+						<a href="<?php bloginfo('url'); ?>/wholesale" class="secondary-nav-item <?php if( count( $wholesale_menu ) ) : ?>with-sub-nav<?php endif; ?>
+						<?php if(is_tree(get_page_id('wholesale'))){ echo ' current-menu'; } ?>
+						">Wholesale</a>
+						<ul class="sub-nav-list">
+						<?php foreach($wholesale_menu as $item) : ?>
+							<li class="sub-nav-list-item">
+								<a href="<?php echo $item->url; ?>" class="<?php if($item->object_id == $post->ID){ echo ' current-menu'; } ?>">
+									<?php echo $item->title; ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+						</ul>
 					</li>
 					<li class="<?php if( count( $newsletter_menu ) ) : ?>js-with-sub-nav<?php endif; ?>">
-						<a href="#js-hidden" data-type="inline" class="secondary-nav-item venobox <?php if( count( $newsletter_menu ) ) : ?>with-sub-nav<?php endif; ?>">Join Our Newsletter</a>
-						<?php if (function_exists(clean_custom_menus('newsletter'))) clean_custom_menus('newsletter'); ?>
+						<a href="#js-hidden" data-type="inline" class="secondary-nav-item venobox">Join Our Newsletter</a>
+					
 					</li>
 				</ul>
 				<ul class="social-nav">
@@ -108,6 +194,11 @@
 					<li>
 						<a href="https://www.instagram.com/lucyskycannabisboutique/" class="social-icon" target="_blank">
 							<?php include 'images/icon-socialMedia--instagram.svg' ?>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.pinterest.com/lucyskycannabisboutique/" class="social-icon" target="_blank">
+							<?php include 'images/icon-socialMedia--pinterest.svg' ?>
 						</a>
 					</li>
 					<!-- <li>

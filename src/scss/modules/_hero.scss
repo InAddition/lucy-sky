@@ -89,7 +89,7 @@
 		height: 100%;
 		z-index: 2;
 		position: absolute;
-		background: rgba(0,0,0,0.8);
+		background: rgba(0,0,0,0.85);
 		content: '';
 		opacity: 0.5;
 	}
@@ -206,6 +206,9 @@
 	position: relative;
 	text-align: center;
 	padding: 0 30px;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 900px;
 	a {
 		margin: 0 auto;
 	}
